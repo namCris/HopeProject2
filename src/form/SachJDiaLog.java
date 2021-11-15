@@ -234,6 +234,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
         jLabel1.setForeground(new java.awt.Color(255, 170, 106));
         jLabel1.setText("Mã loại sách  :");
 
+        txtMaLoaiSach.setEditable(false);
         txtMaLoaiSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtMaLoaiSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
 
