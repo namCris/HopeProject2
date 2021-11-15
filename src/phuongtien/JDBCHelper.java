@@ -17,8 +17,8 @@ import java.sql.SQLException;
  */
 public class JDBCHelper {
     private static String connec = "jdbc:sqlserver://localhost:1433;database=QLCuaHangSach";
-    private static String username = "85thanhlam";
-    private static String passwork = "85thanhlam";
+    private static String username = "demo";
+    private static String passwork = "123";
     public static void main(String[] args) {
         try {  
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
