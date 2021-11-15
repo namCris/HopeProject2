@@ -26,12 +26,12 @@ public class XImage {
     }
 
     public static ImageIcon readNhanVien(String fileName) {
-        File path = new File("D:\\PRO1041\\Hope\\src\\hinhanh\\nhanvien", fileName);
+        File path = new File("C:\\Users\\ACER\\Downloads\\Du_AN_1\\HopeProject2\\src\\hinhanh\\nhanvien", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
 
     public static boolean saveNhanVien(File src) {
-        File dst = new File("D:\\PRO1041\\Hope\\src\\hinhanh\\nhanvien", src.getName());
+        File dst = new File("C:\\Users\\ACER\\Downloads\\Du_AN_1\\HopeProject2\\src\\hinhanh\\nhanvien", src.getName());
         if (!dst.getParentFile().exists()) {
             dst.getParentFile().mkdirs();
         }
@@ -46,12 +46,12 @@ public class XImage {
     }
 
     public static ImageIcon readBiaSach(String fileName) {
-        File path = new File("D:\\PRO1041\\Hope\\src\\hinhanh\\biasach", fileName);
+        File path = new File("C:\\Users\\ACER\\Downloads\\Du_AN_1\\HopeProject2\\src\\hinhanh\\biasach", fileName);
         return new ImageIcon(path.getAbsolutePath());
     }
 
     public static boolean saveBiaSach(File src) {
-        File dst = new File("D:\\PRO1041\\Hope\\src\\hinhanh\\biasach", src.getName());
+        File dst = new File("C:\\Users\\ACER\\Downloads\\Du_AN_1\\HopeProject2\\src\\hinhanh\\biasach", src.getName());
         if (!dst.getParentFile().exists()) {
             dst.getParentFile().mkdirs();
         }
