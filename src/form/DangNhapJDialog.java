@@ -76,7 +76,6 @@ NhanVienDAO nvdao = new NhanVienDAO();
 
         btnDangNhap.setBackground(new java.awt.Color(255, 170, 106));
         btnDangNhap.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnDangNhap.setForeground(new java.awt.Color(255, 255, 255));
         btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/Cat in a Box_48px.png"))); // NOI18N
         btnDangNhap.setText("Đăng nhập");
         btnDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -88,7 +87,6 @@ NhanVienDAO nvdao = new NhanVienDAO();
 
         btnThoat.setBackground(new java.awt.Color(255, 170, 106));
         btnThoat.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnThoat.setForeground(new java.awt.Color(255, 255, 255));
         btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnThoat.setText("Đóng");
         btnThoat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));

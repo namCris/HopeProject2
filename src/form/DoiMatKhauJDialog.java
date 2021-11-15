@@ -67,7 +67,6 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         btnDoiMatKhau.setBackground(new java.awt.Color(255, 170, 106));
         btnDoiMatKhau.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnDoiMatKhau.setForeground(new java.awt.Color(255, 255, 255));
         btnDoiMatKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/password_48px.png"))); // NOI18N
         btnDoiMatKhau.setText("Đổi mật khẩu");
         btnDoiMatKhau.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -79,7 +78,6 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
 
         btnKetThuc.setBackground(new java.awt.Color(255, 170, 106));
         btnKetThuc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnKetThuc.setForeground(new java.awt.Color(255, 255, 255));
         btnKetThuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnKetThuc.setText("Hủy bỏ");
         btnKetThuc.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));

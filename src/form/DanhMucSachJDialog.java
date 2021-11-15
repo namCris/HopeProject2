@@ -83,7 +83,6 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
 
         btnThem.setBackground(new java.awt.Color(255, 170, 106));
         btnThem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnThem.setForeground(new java.awt.Color(255, 255, 255));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/add_48px.png"))); // NOI18N
         btnThem.setText("Thêm ");
         btnThem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -95,7 +94,6 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
 
         btnXoa.setBackground(new java.awt.Color(255, 170, 106));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
         btnXoa.setText("Xóa");
         btnXoa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -107,7 +105,6 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
 
         btnSua.setBackground(new java.awt.Color(255, 170, 106));
         btnSua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(255, 255, 255));
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
         btnSua.setText("Cập nhật");
         btnSua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -119,7 +116,6 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
 
         btnLamMoi.setBackground(new java.awt.Color(255, 170, 106));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnLamMoi.setForeground(new java.awt.Color(255, 255, 255));
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
         btnLamMoi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
