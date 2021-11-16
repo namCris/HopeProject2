@@ -9,6 +9,7 @@ import dao.DanhMucSachDAO;
 import dao.DonHangCTDAO;
 import dao.DonHangDAO;
 import dao.SachDAO;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
@@ -534,13 +535,16 @@ public class DonHangJDialog extends javax.swing.JDialog {
     }
     
     void insert() {
-        
+        ArrayList<DonHang> list = new ArrayList<>();
+        ArrayList<DonHangCT> list1 = new ArrayList<>();
         DonHang dh = getForm();
-        
+        DonHangCT ct = getFormCT();
        
         try {
             
-            dhDAO.insert(dh);
+            list.add(dh);
+            
+          
        
             this.fillTable(); // đổ dữ liệu vào bảng
            // this.clearForm();// sau khi thêm xong thì ta xóa trắng form
