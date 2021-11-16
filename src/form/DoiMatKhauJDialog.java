@@ -49,23 +49,31 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HOPE - ĐỔI MẬT KHẨU");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 5));
 
         txtMaNhanVien.setEditable(false);
+        txtMaNhanVien.setBackground(new java.awt.Color(0, 153, 153));
         txtMaNhanVien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtMaNhanVien.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Mã nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        txtMaNhanVien.setForeground(new java.awt.Color(255, 255, 255));
+        txtMaNhanVien.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Mã nhân viên", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
+        txtMatKhauHienTai.setBackground(new java.awt.Color(0, 153, 153));
         txtMatKhauHienTai.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtMatKhauHienTai.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Mật khẩu hiện tại", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        txtMatKhauHienTai.setForeground(new java.awt.Color(255, 255, 255));
+        txtMatKhauHienTai.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Mật khẩu hiện tại", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
+        txtMauKhauMoi.setBackground(new java.awt.Color(0, 153, 153));
         txtMauKhauMoi.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtMauKhauMoi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Mật khẩu mới", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        txtMauKhauMoi.setForeground(new java.awt.Color(255, 255, 255));
+        txtMauKhauMoi.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Mật khẩu mới", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
+        txtXacNhan.setBackground(new java.awt.Color(0, 153, 153));
         txtXacNhan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtXacNhan.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Xác nhận mật khẩu mới", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
+        txtXacNhan.setForeground(new java.awt.Color(255, 255, 255));
+        txtXacNhan.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Xác nhận mật khẩu mới", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        btnDoiMatKhau.setBackground(new java.awt.Color(255, 229, 210));
+        btnDoiMatKhau.setBackground(new java.awt.Color(255, 153, 51));
         btnDoiMatKhau.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDoiMatKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/password_48px.png"))); // NOI18N
         btnDoiMatKhau.setText("Đổi mật khẩu");
@@ -76,7 +84,7 @@ public class DoiMatKhauJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnKetThuc.setBackground(new java.awt.Color(255, 229, 210));
+        btnKetThuc.setBackground(new java.awt.Color(255, 153, 51));
         btnKetThuc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnKetThuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnKetThuc.setText("Hủy bỏ");

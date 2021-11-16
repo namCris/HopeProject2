@@ -94,7 +94,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
         setTitle("HOPE - QUẢN LÝ SÁCH");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 5));
         jPanel1.setToolTipText("");
 
         tabSach.setBackground(new java.awt.Color(0, 153, 153));
@@ -157,9 +157,8 @@ public class SachJDiaLog extends javax.swing.JDialog {
         txtGiaTienBan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtGiaTienBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        btnThem.setBackground(new java.awt.Color(255, 229, 210));
+        btnThem.setBackground(new java.awt.Color(255, 153, 51));
         btnThem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnThem.setForeground(new java.awt.Color(255, 255, 255));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/add_48px.png"))); // NOI18N
         btnThem.setText("Thêm ");
         btnThem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -169,9 +168,8 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 229, 210));
+        btnXoa.setBackground(new java.awt.Color(255, 153, 51));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
         btnXoa.setText("Xóa");
         btnXoa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -181,9 +179,8 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(255, 229, 210));
+        btnSua.setBackground(new java.awt.Color(255, 153, 51));
         btnSua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnSua.setForeground(new java.awt.Color(255, 255, 255));
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
         btnSua.setText("Cập nhật");
         btnSua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -193,9 +190,8 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnLamMoi.setBackground(new java.awt.Color(255, 229, 210));
+        btnLamMoi.setBackground(new java.awt.Color(255, 153, 51));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnLamMoi.setForeground(new java.awt.Color(255, 255, 255));
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
         btnLamMoi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -352,9 +348,8 @@ public class SachJDiaLog extends javax.swing.JDialog {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnTimKiem.setBackground(new java.awt.Color(255, 170, 106));
+        btnTimKiem.setBackground(new java.awt.Color(255, 153, 51));
         btnTimKiem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnTimKiem.setForeground(new java.awt.Color(255, 255, 255));
         btnTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/search_48px.png"))); // NOI18N
         btnTimKiem.setText("Tìm kiếm");
         btnTimKiem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
@@ -365,9 +360,9 @@ public class SachJDiaLog extends javax.swing.JDialog {
         });
 
         txtTimKiem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTimKiem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        txtTimKiem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 3));
 
-        tblSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        tblSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         tblSach.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblSach.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

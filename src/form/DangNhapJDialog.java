@@ -75,7 +75,7 @@ NhanVienDAO nvdao = new NhanVienDAO();
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Mật khẩu :");
 
-        btnDangNhap.setBackground(new java.awt.Color(255, 229, 210));
+        btnDangNhap.setBackground(new java.awt.Color(255, 153, 51));
         btnDangNhap.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/Cat in a Box_48px.png"))); // NOI18N
         btnDangNhap.setText("Đăng nhập");
@@ -86,7 +86,7 @@ NhanVienDAO nvdao = new NhanVienDAO();
             }
         });
 
-        btnThoat.setBackground(new java.awt.Color(255, 229, 210));
+        btnThoat.setBackground(new java.awt.Color(255, 153, 51));
         btnThoat.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnThoat.setText("Đóng");

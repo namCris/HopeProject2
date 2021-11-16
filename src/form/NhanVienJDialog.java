@@ -73,7 +73,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 5));
 
         tabNhanVien.setBackground(new java.awt.Color(255, 255, 255));
         tabNhanVien.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -112,7 +112,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         rdoNhanVien.setForeground(new java.awt.Color(255, 255, 255));
         rdoNhanVien.setText("Nhân viên");
 
-        btnThem.setBackground(new java.awt.Color(255, 229, 210));
+        btnThem.setBackground(new java.awt.Color(255, 153, 51));
         btnThem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/add_48px.png"))); // NOI18N
         btnThem.setText("Thêm ");
@@ -123,7 +123,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 229, 210));
+        btnXoa.setBackground(new java.awt.Color(255, 153, 51));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
         btnXoa.setText("Xóa");
@@ -134,7 +134,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(255, 229, 210));
+        btnSua.setBackground(new java.awt.Color(255, 153, 51));
         btnSua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
         btnSua.setText("Cập nhật");
@@ -145,7 +145,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnLamMoi.setBackground(new java.awt.Color(255, 229, 210));
+        btnLamMoi.setBackground(new java.awt.Color(255, 153, 51));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
@@ -263,9 +263,10 @@ public class NhanVienJDialog extends javax.swing.JDialog {
 
         tabNhanVien.addTab("Thông tin nhân viên", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/change_48px.png")), jPanel2); // NOI18N
 
+        jPanel3.setBackground(new java.awt.Color(0, 153, 153));
         jPanel3.setToolTipText("HOPE - QUẢN LÝ NHÂN VIÊN");
 
-        tblNhanVien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        tblNhanVien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         tblNhanVien.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblNhanVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

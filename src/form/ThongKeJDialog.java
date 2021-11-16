@@ -45,8 +45,8 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HOPE - QUẢN LÝ THỐNG KÊ");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 5));
 
         tabThongKe.setBackground(new java.awt.Color(255, 255, 255));
         tabThongKe.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N

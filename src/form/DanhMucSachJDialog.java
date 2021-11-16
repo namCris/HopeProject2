@@ -60,7 +60,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
         setTitle("HOPE - QUẢN LÝ DANH MỤC SÁCH");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51), 5));
 
         tabDanhMucSach.setBackground(new java.awt.Color(255, 255, 255));
         tabDanhMucSach.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -82,7 +82,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
         txtTenLoai.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtTenLoai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 2));
 
-        btnThem.setBackground(new java.awt.Color(255, 229, 210));
+        btnThem.setBackground(new java.awt.Color(255, 153, 51));
         btnThem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/add_48px.png"))); // NOI18N
         btnThem.setText("Thêm ");
@@ -93,7 +93,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 229, 210));
+        btnXoa.setBackground(new java.awt.Color(255, 153, 51));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
         btnXoa.setText("Xóa");
@@ -104,7 +104,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(255, 229, 210));
+        btnSua.setBackground(new java.awt.Color(255, 153, 51));
         btnSua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
         btnSua.setText("Cập nhật");
@@ -115,7 +115,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnLamMoi.setBackground(new java.awt.Color(255, 229, 210));
+        btnLamMoi.setBackground(new java.awt.Color(255, 153, 51));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
