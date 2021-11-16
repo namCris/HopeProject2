@@ -133,7 +133,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                 {null, null, null, null, null}
             },
             new String [] {
-                "LOẠI SÁCH", "TÊN SÁCH", "SỐ LƯỢNG", "TIỀN LÃI", "THÁNG NĂM"
+                "LOẠI SÁCH", "TÊN SÁCH", "SỐ LƯỢNG", "TIỀN LÃI", "NĂM"
             }
         ) {
             boolean[] canEdit = new boolean [] {

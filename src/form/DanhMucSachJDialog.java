@@ -60,22 +60,20 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
         setTitle("HOPE - QUẢN LÝ DANH MỤC SÁCH");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 166, 245), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 5));
 
         tabDanhMucSach.setBackground(new java.awt.Color(255, 255, 255));
         tabDanhMucSach.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 170, 106));
         jLabel2.setText("Mã loại :");
 
         txtMaLoai.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtMaLoai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 170, 106));
         jLabel3.setText("Tên loại :");
 
         txtTenLoai.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
