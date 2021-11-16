@@ -74,7 +74,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         setTitle("HOPE - TRANG CHỦ");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 166, 245), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
 
         jToolBar1.setBackground(new java.awt.Color(255, 255, 255));
         jToolBar1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -83,7 +83,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         btnTaiNguyen.setBackground(new java.awt.Color(255, 255, 255));
         btnTaiNguyen.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnTaiNguyen.setForeground(new java.awt.Color(255, 170, 106));
+        btnTaiNguyen.setForeground(new java.awt.Color(0, 153, 153));
         btnTaiNguyen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/books_48px.png"))); // NOI18N
         btnTaiNguyen.setText("Tài nguyên");
         btnTaiNguyen.setBorder(null);
@@ -100,7 +100,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         btnDonHang.setBackground(new java.awt.Color(255, 255, 255));
         btnDonHang.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnDonHang.setForeground(new java.awt.Color(255, 170, 106));
+        btnDonHang.setForeground(new java.awt.Color(0, 153, 153));
         btnDonHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/bookshop_48px.png"))); // NOI18N
         btnDonHang.setText("Đơn hàng");
         btnDonHang.setBorder(null);
@@ -117,7 +117,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         btnTopSach.setBackground(new java.awt.Color(255, 255, 255));
         btnTopSach.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnTopSach.setForeground(new java.awt.Color(255, 170, 106));
+        btnTopSach.setForeground(new java.awt.Color(0, 153, 153));
         btnTopSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/fire_48px.png"))); // NOI18N
         btnTopSach.setText("Top sách");
         btnTopSach.setBorder(null);
@@ -134,7 +134,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         btnDangXuat.setBackground(new java.awt.Color(255, 255, 255));
         btnDangXuat.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnDangXuat.setForeground(new java.awt.Color(255, 170, 106));
+        btnDangXuat.setForeground(new java.awt.Color(0, 153, 153));
         btnDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/exit_40px.png"))); // NOI18N
         btnDangXuat.setText("Đăng xuất");
         btnDangXuat.setBorder(null);
@@ -151,7 +151,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         btnKetThuc.setBackground(new java.awt.Color(255, 255, 255));
         btnKetThuc.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
-        btnKetThuc.setForeground(new java.awt.Color(255, 170, 106));
+        btnKetThuc.setForeground(new java.awt.Color(0, 153, 153));
         btnKetThuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnKetThuc.setText("Kết thúc");
         btnKetThuc.setBorder(null);
@@ -168,7 +168,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/original_work-hard-typographic-print.jpg"))); // NOI18N
 
         lblDongHo.setFont(new java.awt.Font("Bahnschrift", 1, 18)); // NOI18N
-        lblDongHo.setForeground(new java.awt.Color(255, 170, 106));
+        lblDongHo.setForeground(new java.awt.Color(0, 153, 153));
         lblDongHo.setText("6:39:00");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -198,7 +198,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         jMenuBar1.setBackground(new java.awt.Color(255, 255, 255));
 
         jMenu1.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu1.setForeground(new java.awt.Color(255, 170, 106));
+        jMenu1.setForeground(new java.awt.Color(0, 153, 153));
         jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/account_40px.png"))); // NOI18N
         jMenu1.setText("Tài khoản");
         jMenu1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -206,6 +206,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         mniDangXuat.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniDangXuat.setBackground(new java.awt.Color(255, 255, 255));
         mniDangXuat.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniDangXuat.setForeground(new java.awt.Color(0, 153, 153));
         mniDangXuat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/exit_40px.png"))); // NOI18N
         mniDangXuat.setText("Đăng xuất");
         mniDangXuat.addActionListener(new java.awt.event.ActionListener() {
@@ -219,6 +220,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         mniDoiMatKhau.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniDoiMatKhau.setBackground(new java.awt.Color(255, 255, 255));
         mniDoiMatKhau.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniDoiMatKhau.setForeground(new java.awt.Color(0, 153, 153));
         mniDoiMatKhau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/book_16px.png"))); // NOI18N
         mniDoiMatKhau.setText("Đổi mật khẩu");
         mniDoiMatKhau.addActionListener(new java.awt.event.ActionListener() {
@@ -232,6 +234,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
         mniKetThuc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniKetThuc.setBackground(new java.awt.Color(255, 255, 255));
         mniKetThuc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniKetThuc.setForeground(new java.awt.Color(0, 153, 153));
         mniKetThuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         mniKetThuc.setText("Kết thúc ");
         mniKetThuc.addActionListener(new java.awt.event.ActionListener() {
@@ -243,13 +246,14 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setForeground(new java.awt.Color(255, 170, 106));
+        jMenu2.setForeground(new java.awt.Color(0, 153, 153));
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/merge_horizontal_40px.png"))); // NOI18N
         jMenu2.setText("Quản lý");
         jMenu2.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
 
         mniSach.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniSach.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniSach.setForeground(new java.awt.Color(0, 153, 153));
         mniSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/books_48px.png"))); // NOI18N
         mniSach.setText("Sách");
         mniSach.addActionListener(new java.awt.event.ActionListener() {
@@ -261,6 +265,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         mniDonHang.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniDonHang.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniDonHang.setForeground(new java.awt.Color(0, 153, 153));
         mniDonHang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/bookshop_48px.png"))); // NOI18N
         mniDonHang.setText("Đơn hàng");
         mniDonHang.addActionListener(new java.awt.event.ActionListener() {
@@ -272,6 +277,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         mniDanhMuc.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniDanhMuc.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniDanhMuc.setForeground(new java.awt.Color(0, 153, 153));
         mniDanhMuc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/book_48px.png"))); // NOI18N
         mniDanhMuc.setText("Danh mục sách");
         mniDanhMuc.addActionListener(new java.awt.event.ActionListener() {
@@ -284,6 +290,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         mniNhanVien.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniNhanVien.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniNhanVien.setForeground(new java.awt.Color(0, 153, 153));
         mniNhanVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/staff_48px.png"))); // NOI18N
         mniNhanVien.setText("Nhân viên");
         mniNhanVien.addActionListener(new java.awt.event.ActionListener() {
@@ -295,13 +302,14 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setForeground(new java.awt.Color(255, 170, 106));
+        jMenu3.setForeground(new java.awt.Color(0, 153, 153));
         jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/statistics_48px.png"))); // NOI18N
         jMenu3.setText("Thống kê");
         jMenu3.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
 
         mniTopSach.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniTopSach.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniTopSach.setForeground(new java.awt.Color(0, 153, 153));
         mniTopSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/fire_48px.png"))); // NOI18N
         mniTopSach.setText("Top sách bán chạy");
         mniTopSach.addActionListener(new java.awt.event.ActionListener() {
@@ -314,6 +322,7 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         mniDoanhThu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.event.InputEvent.ALT_DOWN_MASK));
         mniDoanhThu.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniDoanhThu.setForeground(new java.awt.Color(0, 153, 153));
         mniDoanhThu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cash_40px.png"))); // NOI18N
         mniDoanhThu.setText("Doanh thu");
         mniDoanhThu.addActionListener(new java.awt.event.ActionListener() {
@@ -325,13 +334,14 @@ public class TrangChuJFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        mnuGioiThieu.setForeground(new java.awt.Color(255, 170, 106));
+        mnuGioiThieu.setForeground(new java.awt.Color(0, 153, 153));
         mnuGioiThieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/name_tag_48px.png"))); // NOI18N
         mnuGioiThieu.setText("Giới thiệu");
         mnuGioiThieu.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
 
         mniGioiThieu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         mniGioiThieu.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        mniGioiThieu.setForeground(new java.awt.Color(0, 153, 153));
         mniGioiThieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/name_tag_48px.png"))); // NOI18N
         mniGioiThieu.setText("Giới thiệu");
         mniGioiThieu.addActionListener(new java.awt.event.ActionListener() {

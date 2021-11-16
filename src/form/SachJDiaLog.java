@@ -93,22 +93,21 @@ public class SachJDiaLog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HOPE - QUẢN LÝ SÁCH");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 166, 245), 5));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
         jPanel1.setToolTipText("");
 
-        tabSach.setBackground(new java.awt.Color(255, 255, 255));
-        tabSach.setForeground(new java.awt.Color(255, 170, 106));
+        tabSach.setBackground(new java.awt.Color(0, 153, 153));
         tabSach.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         tabSach.setOpaque(true);
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
 
         lblBiaSach.setBackground(new java.awt.Color(255, 255, 255));
         lblBiaSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         lblBiaSach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBiaSach.setText("Bìa sách");
-        lblBiaSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        lblBiaSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 3));
         lblBiaSach.setOpaque(true);
         lblBiaSach.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -117,48 +116,48 @@ public class SachJDiaLog extends javax.swing.JDialog {
         });
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tên sách: ");
 
         txtTenSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTenSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtTenSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Tác giả :");
 
         txtTacGia.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTacGia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtTacGia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Nhà xuất bản :");
 
         txtNhaXuatBan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNhaXuatBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtNhaXuatBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Số lượng :");
 
         txtSoLuong.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtSoLuong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtSoLuong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Giá tiền nhập :");
 
         txtGiaTienNhap.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtGiaTienNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtGiaTienNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Giá tiền bán  :");
 
         txtGiaTienBan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtGiaTienBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtGiaTienBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        btnThem.setBackground(new java.awt.Color(255, 170, 106));
+        btnThem.setBackground(new java.awt.Color(255, 229, 210));
         btnThem.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnThem.setForeground(new java.awt.Color(255, 255, 255));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/add_48px.png"))); // NOI18N
@@ -170,7 +169,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 170, 106));
+        btnXoa.setBackground(new java.awt.Color(255, 229, 210));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnXoa.setForeground(new java.awt.Color(255, 255, 255));
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
@@ -182,7 +181,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnSua.setBackground(new java.awt.Color(255, 170, 106));
+        btnSua.setBackground(new java.awt.Color(255, 229, 210));
         btnSua.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnSua.setForeground(new java.awt.Color(255, 255, 255));
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
@@ -194,7 +193,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
             }
         });
 
-        btnLamMoi.setBackground(new java.awt.Color(255, 170, 106));
+        btnLamMoi.setBackground(new java.awt.Color(255, 229, 210));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnLamMoi.setForeground(new java.awt.Color(255, 255, 255));
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
@@ -207,36 +206,36 @@ public class SachJDiaLog extends javax.swing.JDialog {
         });
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Số trang :");
 
         txtSoTrang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtSoTrang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtSoTrang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         txtMoTa.setColumns(20);
         txtMoTa.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtMoTa.setRows(5);
-        txtMoTa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtMoTa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
         jScrollPane2.setViewportView(txtMoTa);
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Mô tả :");
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Ngày xuất bản :");
 
         txtNgayXuatBan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNgayXuatBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtNgayXuatBan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Mã loại sách  :");
 
         txtMaLoaiSach.setEditable(false);
         txtMaLoaiSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtMaLoaiSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtMaLoaiSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -256,9 +255,9 @@ public class SachJDiaLog extends javax.swing.JDialog {
                                     .addComponent(jLabel1))
                                 .addGap(46, 46, 46)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtTenSach, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)
+                                    .addComponent(txtTenSach, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                                     .addComponent(txtMaLoaiSach)
-                                    .addComponent(txtTacGia, javax.swing.GroupLayout.Alignment.TRAILING)))
+                                    .addComponent(txtTacGia)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
@@ -305,7 +304,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblBiaSach, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
+                        .addComponent(lblBiaSach, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
@@ -339,14 +338,14 @@ public class SachJDiaLog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 95, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLamMoi)
                     .addComponent(btnSua)
                     .addComponent(btnXoa)
                     .addComponent(btnThem))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         tabSach.addTab("Thông tin sách", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/information_48px.png")), jPanel2); // NOI18N
@@ -406,7 +405,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 845, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 966, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(btnTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -421,13 +420,13 @@ public class SachJDiaLog extends javax.swing.JDialog {
                     .addComponent(btnTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtTimKiem))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 416, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 477, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         tabSach.addTab("Tài nguyên sách", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/book_40px.png")), jPanel3); // NOI18N
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
 
         cboDanhMucSach.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cboDanhMucSach.addActionListener(new java.awt.event.ActionListener() {
@@ -568,7 +567,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
     }
 
     private void init() {
-        setSize(1000, 675);
+        setSize(1000, 680);
         setLocationRelativeTo(null);
         this.setIconImage(XImage.getLogo());
         this.fillComboBoxDanhMucSach();

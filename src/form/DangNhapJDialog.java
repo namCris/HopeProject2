@@ -54,7 +54,7 @@ NhanVienDAO nvdao = new NhanVienDAO();
         setTitle("NHÀ SÁCH HOPE RIGHT HERE - ĐĂNG NHẬP");
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/ad95b0b5cc8d8ce4467d666c927b6a84.gif"))); // NOI18N
@@ -65,15 +65,17 @@ NhanVienDAO nvdao = new NhanVienDAO();
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Mã nhân viên :");
 
         txtTenDangNhap.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtTenDangNhap.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Mật khẩu :");
 
-        btnDangNhap.setBackground(new java.awt.Color(255, 170, 106));
+        btnDangNhap.setBackground(new java.awt.Color(255, 229, 210));
         btnDangNhap.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnDangNhap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/Cat in a Box_48px.png"))); // NOI18N
         btnDangNhap.setText("Đăng nhập");
@@ -84,7 +86,7 @@ NhanVienDAO nvdao = new NhanVienDAO();
             }
         });
 
-        btnThoat.setBackground(new java.awt.Color(255, 170, 106));
+        btnThoat.setBackground(new java.awt.Color(255, 229, 210));
         btnThoat.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnThoat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/cancel_48px.png"))); // NOI18N
         btnThoat.setText("Đóng");

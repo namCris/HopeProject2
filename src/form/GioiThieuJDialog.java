@@ -44,8 +44,8 @@ public class GioiThieuJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GIỚI THIỆU");
 
-        jPanel1.setBackground(new java.awt.Color(0, 166, 245));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 5));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/Mochi Peach Cat Cute Sticker - Mochi Peach Cat Cat Cute - Discover & Share GIFs.gif"))); // NOI18N
 

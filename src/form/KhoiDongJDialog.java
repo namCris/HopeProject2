@@ -49,8 +49,8 @@ public class KhoiDongJDialog extends javax.swing.JDialog {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/R.gif"))); // NOI18N
 
         pgbLoading.setBackground(new java.awt.Color(255, 255, 255));
-        pgbLoading.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        pgbLoading.setForeground(new java.awt.Color(110, 10, 255));
+        pgbLoading.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        pgbLoading.setForeground(new java.awt.Color(0, 153, 153));
         pgbLoading.setStringPainted(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

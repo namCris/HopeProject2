@@ -67,7 +67,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
         setTitle("HOPE - QUẢN LÝ ĐƠN HÀNG");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 166, 245), 5));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPane1.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
@@ -76,7 +76,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jPanel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2), "Danh mục sách", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 170, 106))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Danh mục sách", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
 
         cbxLoaiSach.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
@@ -98,48 +98,48 @@ public class DonHangJDialog extends javax.swing.JDialog {
         );
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setText("Tên sách: ");
 
         txtTenSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTenSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtTenSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel3.setForeground(new java.awt.Color(0, 153, 153));
         jLabel3.setText("Tác giả :");
 
         txtTacGia.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTacGia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtTacGia.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel5.setForeground(new java.awt.Color(0, 153, 153));
         jLabel5.setText("Số lượng :");
 
         txtSoLuong.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtSoLuong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtSoLuong.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel6.setForeground(new java.awt.Color(0, 153, 153));
         jLabel6.setText("Ngày mua :");
 
         txtNgayMua.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtNgayMua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtNgayMua.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
         jLabel7.setText("Giá tiền :");
 
         txtGiaTien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtGiaTien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtGiaTien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("Tổng tiền :");
 
         txtTongTien.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTongTien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtTongTien.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
-        btnBanSach.setBackground(new java.awt.Color(0, 166, 245));
+        btnBanSach.setBackground(new java.awt.Color(153, 255, 255));
         btnBanSach.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnBanSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/sell_48px.png"))); // NOI18N
         btnBanSach.setText("Đã bán");
@@ -150,39 +150,39 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
         });
 
-        btnXoa.setBackground(new java.awt.Color(255, 170, 106));
+        btnXoa.setBackground(new java.awt.Color(255, 229, 210));
         btnXoa.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/delete_40px.png"))); // NOI18N
         btnXoa.setText("Xóa");
         btnXoa.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        btnCapnhat.setBackground(new java.awt.Color(255, 170, 106));
+        btnCapnhat.setBackground(new java.awt.Color(255, 229, 210));
         btnCapnhat.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnCapnhat.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/update_48px.png"))); // NOI18N
         btnCapnhat.setText("Cập nhật");
         btnCapnhat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
-        btnLamMoi.setBackground(new java.awt.Color(255, 170, 106));
+        btnLamMoi.setBackground(new java.awt.Color(255, 229, 210));
         btnLamMoi.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
         btnLamMoi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel4.setForeground(new java.awt.Color(0, 153, 153));
         jLabel4.setText("Mã đơn hàng :");
 
         txtMaDH.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtMaDH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 2));
+        txtMaDH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 170, 106));
+        jLabel9.setForeground(new java.awt.Color(0, 153, 153));
         jLabel9.setText("Ghi chú :");
 
         txtGhichu.setColumns(20);
         txtGhichu.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtGhichu.setRows(5);
-        txtGhichu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        txtGhichu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         jScrollPane2.setViewportView(txtGhichu);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -193,34 +193,13 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtTacGia, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTenSach)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNgayMua))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(txtMaDH, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 239, Short.MAX_VALUE)
+                        .addGap(0, 202, Short.MAX_VALUE)
                         .addComponent(btnBanSach, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnCapnhat, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,8 +213,29 @@ public class DonHangJDialog extends javax.swing.JDialog {
                                 .addComponent(jLabel8)
                                 .addGap(23, 23, 23)
                                 .addComponent(txtTongTien))
-                            .addComponent(jScrollPane2))))
-                .addContainerGap())
+                            .addComponent(jScrollPane2)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtTacGia, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(txtSoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtNgayMua))
+                            .addComponent(txtTenSach)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(txtMaDH, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(39, 39, 39))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,14 +277,14 @@ public class DonHangJDialog extends javax.swing.JDialog {
                     .addComponent(btnCapnhat)
                     .addComponent(btnXoa)
                     .addComponent(btnBanSach))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Thông tin đơn hàng ", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/order_history_48px.png")), jPanel2); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton6.setBackground(new java.awt.Color(255, 170, 106));
+        jButton6.setBackground(new java.awt.Color(255, 229, 210));
         jButton6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/search_48px.png"))); // NOI18N
@@ -292,9 +292,9 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jButton6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
 
         jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
 
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 170, 106), 3));
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -342,7 +342,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 446, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -459,7 +459,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
     // End of variables declaration//GEN-END:variables
 
     private void init() {
-        setSize(1000, 623);
+        setSize(1000, 644);
         setLocationRelativeTo(null);
         this.setIconImage(XImage.getLogo());
     }

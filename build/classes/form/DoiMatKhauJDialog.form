@@ -42,7 +42,7 @@
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
             <LineBorder thickness="5">
-              <Color PropertyName="color" blue="f5" green="a6" red="0" type="rgb"/>
+              <Color PropertyName="color" blue="d2" green="e5" red="ff" type="rgb"/>
             </LineBorder>
           </Border>
         </Property>
@@ -51,19 +51,27 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="txtMaNhanVien" max="32767" attributes="0"/>
-                      <Component id="txtMatKhauHienTai" max="32767" attributes="0"/>
-                      <Component id="txtMauKhauMoi" alignment="0" max="32767" attributes="0"/>
-                      <Component id="txtXacNhan" alignment="1" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace pref="86" max="32767" attributes="0"/>
                           <Component id="btnDoiMatKhau" min="-2" pref="145" max="-2" attributes="0"/>
-                          <EmptySpace pref="210" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="btnKetThuc" min="-2" pref="145" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="txtXacNhan" pref="460" max="32767" attributes="0"/>
+                              <Component id="txtMauKhauMoi" max="32767" attributes="0"/>
+                              <Component id="txtMatKhauHienTai" max="32767" attributes="0"/>
+                              <Component id="txtMaNhanVien" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -104,11 +112,11 @@
                 <TitledBorder title="M&#xe3; nh&#xe2;n vi&#xea;n">
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                     </LineBorder>
                   </Border>
                   <Font PropertyName="font" name="Arial" size="14" style="1"/>
-                  <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                  <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -124,11 +132,11 @@
                 <TitledBorder title="M&#x1ead;t kh&#x1ea9;u hi&#x1ec7;n t&#x1ea1;i">
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                     </LineBorder>
                   </Border>
                   <Font PropertyName="font" name="Arial" size="14" style="1"/>
-                  <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                  <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -144,11 +152,11 @@
                 <TitledBorder title="M&#x1ead;t kh&#x1ea9;u m&#x1edb;i">
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                     </LineBorder>
                   </Border>
                   <Font PropertyName="font" name="Arial" size="14" style="1"/>
-                  <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                  <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -164,11 +172,11 @@
                 <TitledBorder title="X&#xe1;c nh&#x1ead;n m&#x1ead;t kh&#x1ea9;u m&#x1edb;i">
                   <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
-                      <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                      <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                     </LineBorder>
                   </Border>
                   <Font PropertyName="font" name="Arial" size="14" style="1"/>
-                  <Color PropertyName="color" blue="6a" green="aa" red="ff" type="rgb"/>
+                  <Color PropertyName="color" blue="99" green="99" red="0" type="rgb"/>
                 </TitledBorder>
               </Border>
             </Property>
@@ -177,7 +185,7 @@
         <Component class="javax.swing.JButton" name="btnDoiMatKhau">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6a" green="aa" red="ff" type="rgb"/>
+              <Color blue="d2" green="e5" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
@@ -201,7 +209,7 @@
         <Component class="javax.swing.JButton" name="btnKetThuc">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="6a" green="aa" red="ff" type="rgb"/>
+              <Color blue="d2" green="e5" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>

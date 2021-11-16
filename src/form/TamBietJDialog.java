@@ -41,15 +41,15 @@ public class TamBietJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HOPE - TẠM BIỆT");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(110, 10, 255), 5));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 229, 210), 5));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/5eb01bc9c34e415.gif"))); // NOI18N
 
         pgbLoading.setBackground(new java.awt.Color(255, 255, 255));
-        pgbLoading.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        pgbLoading.setForeground(new java.awt.Color(110, 10, 255));
+        pgbLoading.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
+        pgbLoading.setForeground(new java.awt.Color(0, 153, 153));
         pgbLoading.setStringPainted(true);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
