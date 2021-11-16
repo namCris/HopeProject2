@@ -12,6 +12,7 @@ import dao.SachDAO;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
+import phuongtien.Auth;
 import phuongtien.MsgBox;
 import phuongtien.XDate;
 import phuongtien.XImage;
@@ -25,11 +26,13 @@ import thucthe.Sach;
  * @author Thanh Lam
  */
 public class DonHangJDialog extends javax.swing.JDialog {
+
     DanhMucSachDAO lsDAO = new DanhMucSachDAO();
     DonHangDAO dhDAO = new DonHangDAO();
     DonHangCTDAO dhctDAO = new DonHangCTDAO();
     SachDAO sDAO = new SachDAO();
     int row = -1;
+
     /**
      * Creates new form DonHangJDialog
      */
@@ -366,8 +369,8 @@ public class DonHangJDialog extends javax.swing.JDialog {
                     .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
         );
 
         jTabbedPane1.addTab("Danh sách đơn hàng ", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/list_of_thumbnails_48px.png")), jPanel3); // NOI18N
@@ -403,15 +406,15 @@ public class DonHangJDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBanSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBanSachActionPerformed
-        // TODO add your handling code here:
+        insert();
     }//GEN-LAST:event_btnBanSachActionPerformed
 
     private void cbxTenSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTenSachActionPerformed
-       chonSach();
+        chonSach();
     }//GEN-LAST:event_cbxTenSachActionPerformed
 
     private void cbxLoaiSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLoaiSachActionPerformed
-       
+        fillComboBoxSach();
     }//GEN-LAST:event_cbxLoaiSachActionPerformed
 
     /**
@@ -495,68 +498,129 @@ public class DonHangJDialog extends javax.swing.JDialog {
         setLocationRelativeTo(null);
         this.setIconImage(XImage.getLogo());
         this.fillComboBoxLoaiSach();
-       // this.fillTable();
+
+        // this.fillTable();
         this.updateStatus();
     }
-   
     
-    /*void fillTable() {
+    void fillTable() {
         //Đổ dữ liệu vào bảng
         DefaultTableModel model = (DefaultTableModel) tblDonHang.getModel();
         model.setRowCount(0);//Xóa tất cả các hàng trên Jtable
         try {
-
-            Sach s = (Sach) cbxLoaiSach.getSelectedItem();
-            List<DonHang> list = dhDAO.selectById(s.getMaSach());
-            for (DonHang kh : list) {
-                Object[] row = { XDate.toString(kh.getNgayMua(), "dd-MM-yyyy")};
-                model.addRow(row);
-
+            
+            Sach s = (Sach) cbxTenSach.getSelectedItem();
+            
+            if (s != null) {
+                DonHang ctt = new DonHang();
+                List<DonHang> list = dhDAO.selectAll();
+                
+                for (DonHang dh : list) {
+                    DonHangCT ct = dhctDAO.selectById(dh.getMaDH());
+                    model.addRow(new Object[]{
+                        dh.getMaDH(),
+                        ct.getMaS(),
+                        ct.getSoLuong(),
+                        ct.getGiaBan(),
+                        dh.getTongTien(),
+                        XDate.toString(dh.getNgayMua(), "dd-MM-yyyy"),
+                        dh.getMaNV()});                    
+                }
             }
-
         } catch (Exception e) {
             MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
             e.printStackTrace();
         }
-    }*/
+    }
+    
+    void insert() {
+        
+        DonHang dh = getForm();
+        
+       
+        try {
+            
+            dhDAO.insert(dh);
+       
+            this.fillTable(); // đổ dữ liệu vào bảng
+           // this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+
+            MsgBox.alert(this, "Thêm thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "Thêm thất bại!");
+            e.printStackTrace();
+        }
+    }
+    
+    void setForm(DonHang dh, DonHangCT ct) {
+        
+        txtMaDH.setText(dh.getMaDH());
+        txtSoLuong.setText(String.valueOf(ct.getSoLuong()));
+        txtTongTien.setText(String.valueOf(dh.getTongTien()));
+        txtNgayMua.setText(XDate.toString(dh.getNgayMua(), "dd-MM-yyyy"));
+        txtGhichu.setText(ct.getGhiChu());
+        
+    }
+
+    DonHang getForm() {
+        DonHang model = new DonHang();
+        model.setMaDH(txtMaDH.getText());
+        model.setTongTien(Double.parseDouble(txtTongTien.getText()));
+        model.setNgayMua(XDate.toDate(txtNgayMua.getText(), "dd-MM-yyyy"));
+        model.setMaNV(Auth.user.getMaNhanVien());
+        return model;
+    }
+    
+    DonHangCT getFormCT() {
+        DonHangCT ct = new DonHangCT();
+        ct.setSoLuong(Integer.parseInt(txtSoLuong.getText()));
+        ct.setGiaBan(Double.parseDouble(txtGiaTien.getText()));
+        ct.setGhiChu(txtGhichu.getText());
+        return ct;
+    }
 
     void updateStatus() {
         //cập nhật trạng thái các nút
-       boolean edit = this.row >= 0;
+        boolean edit = this.row >= 0;
         btnBanSach.setEnabled(!edit);
         btnCapnhat.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
- 
+    
     void fillComboBoxLoaiSach() {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cbxLoaiSach.getModel();
         model.removeAllElements();
-        List<DanhMucSach> list =  lsDAO.selectAll();
+        List<DanhMucSach> list = lsDAO.selectAll();
         for (DanhMucSach ls : list) {
             model.addElement(ls);
         }
         this.fillComboBoxSach();
     }
+
     void fillComboBoxSach() {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cbxTenSach.getModel();
         model.removeAllElements();
         DanhMucSach ls = (DanhMucSach) cbxLoaiSach.getSelectedItem();
-        if(ls!=null){
+        if (ls != null) {
             List<Sach> list = sDAO.selectByLoaiSachDH(ls.getMaLoaiSach());
-            for(Sach s : list){
+            for (Sach s : list) {
                 model.addElement(s);
             }
         }
+        this.chonSach();
         
     }
-
+    
     void chonSach() {
+        
         Sach s = (Sach) cbxTenSach.getSelectedItem();
-        txtTacGia.setText(s.getTacGia());
-        txtGiaTien.setText(String.valueOf(s.getGiaBan()));
-        //this.fillTable();
-        this.row = -1;
-        this.updateStatus();
-
+        if (s != null) {
+            txtTacGia.setText(s.getTacGia());
+            txtGiaTien.setText(String.valueOf(s.getGiaBan()));
+            
+            this.fillTable();
+            this.row = -1;
+            this.updateStatus();
+        }
     }
 }

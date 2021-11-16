@@ -70,5 +70,8 @@ public class DonHangDAO extends DAO<DonHang, String> {
         }
         return list;
     }
-    
+       public List<DonHang> selectByDHCT(){
+        String sql = "select distinct a.MaDH,b.MaS,b.Soluong,b.Sotien,a.Tongtien,a.Ngaymua,a.MaNV,b.Ghichu from DonHang a,DonHangChiTiet b where a.MaDH = b.MaDH";
+        return this.selectBySql(sql);
+    }
 }

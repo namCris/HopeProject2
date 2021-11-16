@@ -58,7 +58,7 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
             ResultSet rs = JDBCHelper.query(sql, args);
             while (rs.next()) {
                 DonHangCT entity = new DonHangCT();
-                entity.setMaDHCT(rs.getString("MaDH"));
+                //entity.setMaDHCT(rs.getString("MaDH"));
                 entity.setMaS(rs.getInt("MaS"));
                 entity.setSoLuong(rs.getInt("Soluong"));
                 entity.setGiaBan(rs.getDouble("Sotien"));
