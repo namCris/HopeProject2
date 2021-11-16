@@ -5,14 +5,31 @@
  */
 package form;
 
+import dao.DanhMucSachDAO;
+import dao.DonHangCTDAO;
+import dao.DonHangDAO;
+import dao.SachDAO;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+import phuongtien.MsgBox;
+import phuongtien.XDate;
 import phuongtien.XImage;
+import thucthe.DanhMucSach;
+import thucthe.DonHang;
+import thucthe.DonHangCT;
+import thucthe.Sach;
 
 /**
  *
  * @author Thanh Lam
  */
 public class DonHangJDialog extends javax.swing.JDialog {
-
+    DanhMucSachDAO lsDAO = new DanhMucSachDAO();
+    DonHangDAO dhDAO = new DonHangDAO();
+    DonHangCTDAO dhctDAO = new DonHangCTDAO();
+    SachDAO sDAO = new SachDAO();
+    int row = -1;
     /**
      * Creates new form DonHangJDialog
      */
@@ -37,7 +54,6 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jPanel4 = new javax.swing.JPanel();
         cbxLoaiSach = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        txtTenSach = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtTacGia = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -57,11 +73,12 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtGhichu = new javax.swing.JTextArea();
+        cbxTenSach = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jButton6 = new javax.swing.JButton();
         jTextField7 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDonHang = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("HOPE - QUẢN LÝ ĐƠN HÀNG");
@@ -79,6 +96,11 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Danh mục sách", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         cbxLoaiSach.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        cbxLoaiSach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxLoaiSachActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -100,9 +122,6 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Tên sách: ");
-
-        txtTenSach.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        txtTenSach.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -185,6 +204,12 @@ public class DonHangJDialog extends javax.swing.JDialog {
         txtGhichu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         jScrollPane2.setViewportView(txtGhichu);
 
+        cbxTenSach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxTenSachActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -228,7 +253,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtNgayMua))
-                            .addComponent(txtTenSach)))
+                            .addComponent(cbxTenSach, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
@@ -250,9 +275,9 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(txtTenSach, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbxTenSach, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(txtTacGia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -293,9 +318,9 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jTextField7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTextField7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
 
-        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
-        jTable1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDonHang.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
+        tblDonHang.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        tblDonHang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -314,10 +339,10 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setRowHeight(30);
-        jTable1.setSelectionBackground(new java.awt.Color(0, 166, 245));
-        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane1.setViewportView(jTable1);
+        tblDonHang.setRowHeight(30);
+        tblDonHang.setSelectionBackground(new java.awt.Color(0, 166, 245));
+        tblDonHang.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        jScrollPane1.setViewportView(tblDonHang);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -381,6 +406,14 @@ public class DonHangJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBanSachActionPerformed
 
+    private void cbxTenSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxTenSachActionPerformed
+       chonSach();
+    }//GEN-LAST:event_cbxTenSachActionPerformed
+
+    private void cbxLoaiSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLoaiSachActionPerformed
+       
+    }//GEN-LAST:event_cbxLoaiSachActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -429,6 +462,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnXoa;
     private javax.swing.JComboBox<String> cbxLoaiSach;
+    private javax.swing.JComboBox<String> cbxTenSach;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -445,15 +479,14 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField7;
+    private javax.swing.JTable tblDonHang;
     private javax.swing.JTextArea txtGhichu;
     private javax.swing.JTextField txtGiaTien;
     private javax.swing.JTextField txtMaDH;
     private javax.swing.JTextField txtNgayMua;
     private javax.swing.JTextField txtSoLuong;
     private javax.swing.JTextField txtTacGia;
-    private javax.swing.JTextField txtTenSach;
     private javax.swing.JTextField txtTongTien;
     // End of variables declaration//GEN-END:variables
 
@@ -461,5 +494,69 @@ public class DonHangJDialog extends javax.swing.JDialog {
         setSize(1000, 644);
         setLocationRelativeTo(null);
         this.setIconImage(XImage.getLogo());
+        this.fillComboBoxLoaiSach();
+       // this.fillTable();
+        this.updateStatus();
+    }
+   
+    
+    /*void fillTable() {
+        //Đổ dữ liệu vào bảng
+        DefaultTableModel model = (DefaultTableModel) tblDonHang.getModel();
+        model.setRowCount(0);//Xóa tất cả các hàng trên Jtable
+        try {
+
+            Sach s = (Sach) cbxLoaiSach.getSelectedItem();
+            List<DonHang> list = dhDAO.selectById(s.getMaSach());
+            for (DonHang kh : list) {
+                Object[] row = { XDate.toString(kh.getNgayMua(), "dd-MM-yyyy")};
+                model.addRow(row);
+
+            }
+
+        } catch (Exception e) {
+            MsgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+            e.printStackTrace();
+        }
+    }*/
+
+    void updateStatus() {
+        //cập nhật trạng thái các nút
+       boolean edit = this.row >= 0;
+        btnBanSach.setEnabled(!edit);
+        btnCapnhat.setEnabled(edit);
+        btnXoa.setEnabled(edit);
+    }
+ 
+    void fillComboBoxLoaiSach() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cbxLoaiSach.getModel();
+        model.removeAllElements();
+        List<DanhMucSach> list =  lsDAO.selectAll();
+        for (DanhMucSach ls : list) {
+            model.addElement(ls);
+        }
+        this.fillComboBoxSach();
+    }
+    void fillComboBoxSach() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cbxTenSach.getModel();
+        model.removeAllElements();
+        DanhMucSach ls = (DanhMucSach) cbxLoaiSach.getSelectedItem();
+        if(ls!=null){
+            List<Sach> list = sDAO.selectByLoaiSachDH(ls.getMaLoaiSach());
+            for(Sach s : list){
+                model.addElement(s);
+            }
+        }
+        
+    }
+
+    void chonSach() {
+        Sach s = (Sach) cbxTenSach.getSelectedItem();
+        txtTacGia.setText(s.getTacGia());
+        txtGiaTien.setText(String.valueOf(s.getGiaBan()));
+        //this.fillTable();
+        this.row = -1;
+        this.updateStatus();
+
     }
 }

@@ -85,4 +85,10 @@ public class SachDAO extends DAO<Sach, Integer> {
         String sql = "SELECT * FROM Sach WHERE MaLS = ? AND TenS LIKE ?";
         return this.selectBySql(sql, maLS,'%'+keyword+'%');
     }
+    
+    public List<Sach> selectByLoaiSachDH(String maLS) {
+        String sql = "SELECT * FROM Sach WHERE MaLS=?";
+        return this.selectBySql(sql, maLS);
+    }
+    
 }
