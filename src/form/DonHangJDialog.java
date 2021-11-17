@@ -11,6 +11,7 @@ import dao.DonHangDAO;
 import dao.SachDAO;
 import java.util.ArrayList;
 import java.util.List;
+import javax.print.DocPrintJob;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import phuongtien.Auth;
@@ -190,6 +191,11 @@ public class DonHangJDialog extends javax.swing.JDialog {
         btnLamMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hinhanh/refresh_48px.png"))); // NOI18N
         btnLamMoi.setText("Làm mới");
         btnLamMoi.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        btnLamMoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLamMoiActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -346,6 +352,11 @@ public class DonHangJDialog extends javax.swing.JDialog {
         tblDonHang.setRowHeight(30);
         tblDonHang.setSelectionBackground(new java.awt.Color(0, 166, 245));
         tblDonHang.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        tblDonHang.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                tblDonHangMousePressed(evt);
+            }
+        });
         jScrollPane1.setViewportView(tblDonHang);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -417,6 +428,18 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private void cbxLoaiSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLoaiSachActionPerformed
         fillComboBoxSach();
     }//GEN-LAST:event_cbxLoaiSachActionPerformed
+
+    private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
+        clearForm();
+    }//GEN-LAST:event_btnLamMoiActionPerformed
+
+    private void tblDonHangMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDonHangMousePressed
+        if (evt.getClickCount() == 2) {
+
+            this.row = tblDonHang.getSelectedRow();
+            this.edit();
+        }
+    }//GEN-LAST:event_tblDonHangMousePressed
 
     /**
      * @param args the command line arguments
@@ -500,32 +523,35 @@ public class DonHangJDialog extends javax.swing.JDialog {
         this.setIconImage(XImage.getLogo());
         this.fillComboBoxLoaiSach();
 
-        // this.fillTable();
+        this.fillTable();
         this.updateStatus();
     }
-    
+
     void fillTable() {
         //Đổ dữ liệu vào bảng
         DefaultTableModel model = (DefaultTableModel) tblDonHang.getModel();
         model.setRowCount(0);//Xóa tất cả các hàng trên Jtable
         try {
-            
+
             Sach s = (Sach) cbxTenSach.getSelectedItem();
-            
+
             if (s != null) {
-                DonHang ctt = new DonHang();
                 List<DonHang> list = dhDAO.selectAll();
-                
+
                 for (DonHang dh : list) {
                     DonHangCT ct = dhctDAO.selectById(dh.getMaDH());
-                    model.addRow(new Object[]{
-                        dh.getMaDH(),
-                        ct.getMaS(),
-                        ct.getSoLuong(),
-                        ct.getGiaBan(),
-                        dh.getTongTien(),
-                        XDate.toString(dh.getNgayMua(), "dd-MM-yyyy"),
-                        dh.getMaNV()});                    
+                    if (ct != null) {
+                        model.addRow(new Object[]{
+                            dh.getMaDH(),
+                            ct.getMaS(),
+                            ct.getSoLuong(),
+                            ct.getGiaBan(),
+                            dh.getTongTien(),
+                            XDate.toString(dh.getNgayMua(), "dd-MM-yyyy"),
+                            dh.getMaNV(),
+                            ct.getGhiChu()
+                        });
+                    }
                 }
             }
         } catch (Exception e) {
@@ -533,37 +559,84 @@ public class DonHangJDialog extends javax.swing.JDialog {
             e.printStackTrace();
         }
     }
-    
-    void insert() {
-        ArrayList<DonHang> list = new ArrayList<>();
-        ArrayList<DonHangCT> list1 = new ArrayList<>();
-        DonHang dh = getForm();
-        DonHangCT ct = getFormCT();
-       
-        try {
-            
-            list.add(dh);
-            
-          
-       
-            this.fillTable(); // đổ dữ liệu vào bảng
-           // this.clearForm();// sau khi thêm xong thì ta xóa trắng form
 
-            MsgBox.alert(this, "Thêm thành công!");
+    void insert() {
+
+        DonHang dh = getForm();
+        //DonHangCT dhct = getFormCT();
+        try {
+            dhDAO.insert(dh);
+            //dhctDAO.insert(dhct);
+            this.fillTable(); // đổ dữ liệu vào bảng
+            this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+
+            MsgBox.alertSuccessful(this, "Đơn hàng thanh toán thành công!");
         } catch (Exception e) {
-            MsgBox.alert(this, "Thêm thất bại!");
+            MsgBox.alert(this, "Đơn hàng thanh toán thất bại!");
             e.printStackTrace();
         }
     }
-    
-    void setForm(DonHang dh, DonHangCT ct) {
-        
+
+    void update() {
+
+        DonHang dh = getForm();
+        DonHangCT dhct = getFormCT();
+        try {
+            dhDAO.update(dh);
+            dhctDAO.update(dhct);
+            this.fillTable(); // đổ dữ liệu vào bảng
+            this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+
+            MsgBox.alertSuccessful(this, "Cập nhật thành công!");
+        } catch (Exception e) {
+            MsgBox.alert(this, "cập nhật thất bại!");
+            e.printStackTrace();
+        }
+    }
+
+    void edit() {
+        //double click tbl
+        String maDH = (String) tblDonHang.getValueAt(this.row, 0);
+        DonHang dh = dhDAO.selectById(maDH);
+        DonHangCT ct = dhctDAO.selectById(maDH);
+        if(dh!=null){
+            
+       
+       
+           this.setForm(dh,ct);
+            
+            jTabbedPane1.setSelectedIndex(0);
+            this.updateStatus();
+       }
+
+       
+    }
+
+    void clearForm() {
+        //btnMoi
+
+        txtGhichu.setText("");
+        txtNgayMua.setText("");
+        txtMaDH.setText("");
+        txtSoLuong.setText("");
+        txtTongTien.setText("");
+        this.row = -1;
+        this.updateStatus();
+    }
+
+    void setForm(DonHang dh,DonHangCT ct) {
+        //DanhMucSach ls = new DanhMucSach();
+        Sach s = new Sach();
+        //DonHangCT ct = new DonHangCT();
+        //DonHang dh = new DonHang();
         txtMaDH.setText(dh.getMaDH());
         txtSoLuong.setText(String.valueOf(ct.getSoLuong()));
         txtTongTien.setText(String.valueOf(dh.getTongTien()));
         txtNgayMua.setText(XDate.toString(dh.getNgayMua(), "dd-MM-yyyy"));
         txtGhichu.setText(ct.getGhiChu());
-        
+       
+        //cbxLoaiSach.setSelectedItem(ls.getTenLoaiSach());
+        //cbxTenSach.setSelectedItem(s.getTenSach());
     }
 
     DonHang getForm() {
@@ -574,12 +647,18 @@ public class DonHangJDialog extends javax.swing.JDialog {
         model.setMaNV(Auth.user.getMaNhanVien());
         return model;
     }
-    
+
     DonHangCT getFormCT() {
         DonHangCT ct = new DonHangCT();
-        ct.setSoLuong(Integer.parseInt(txtSoLuong.getText()));
-        ct.setGiaBan(Double.parseDouble(txtGiaTien.getText()));
-        ct.setGhiChu(txtGhichu.getText());
+        Sach s = (Sach) cbxTenSach.getSelectedItem();
+        if (s != null) {
+            ct.setMaDHCT(txtMaDH.getText());
+            ct.setMaS(s.getMaSach());
+            ct.setSoLuong(Integer.parseInt(txtSoLuong.getText()));
+            ct.setGiaBan(Double.parseDouble(txtGiaTien.getText()));
+            ct.setGhiChu(txtGhichu.getText());
+        }
+
         return ct;
     }
 
@@ -590,10 +669,10 @@ public class DonHangJDialog extends javax.swing.JDialog {
         btnCapnhat.setEnabled(edit);
         btnXoa.setEnabled(edit);
     }
-    
+
     void fillComboBoxLoaiSach() {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cbxLoaiSach.getModel();
-        model.removeAllElements();
+        model.removeAllElements();                 
         List<DanhMucSach> list = lsDAO.selectAll();
         for (DanhMucSach ls : list) {
             model.addElement(ls);
@@ -611,17 +690,16 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 model.addElement(s);
             }
         }
-        this.chonSach();
-        
+
     }
-    
+
     void chonSach() {
-        
+
         Sach s = (Sach) cbxTenSach.getSelectedItem();
         if (s != null) {
             txtTacGia.setText(s.getTacGia());
             txtGiaTien.setText(String.valueOf(s.getGiaBan()));
-            
+
             this.fillTable();
             this.row = -1;
             this.updateStatus();

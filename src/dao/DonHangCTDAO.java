@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 public class DonHangCTDAO extends DAO<DonHangCT, String>{
 
     final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDH, MaS, Soluong, Sotien, Ghichu) VALUES (?, ?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaS=? , Soluong=? , Sotien=? , Tongtien=? , Ngaymua=? , MaNV=?  WHERE MaDH=?";
+    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaS=? , Soluong=? , Sotien=?, Ghichu=? WHERE MaDH=?";
     final String DELETE_SQL = "DELETE FROM DonHangChiTiet WHERE MaDH=?";
     final String SELECT_ALL_SQL = "SELECT * FROM DonHangChiTiet";
     final String SELECT_BY_ID_SQL = "SELECT * FROM DonHangChiTiet WHERE MaDH = ?";
@@ -72,4 +72,12 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
         return list;
     }
     
+    public List<DonHangCT> selectByMaS(String madh){
+        String sql = "select ls.TenLS,s.TenS,s.Tacgia,a.MaS,a.Soluong,a.Sotien,a.Ghichu,d.*\n" +
+"from DonHang d join DonHangChiTiet a on d.MaDH = a.MaDH\n" +
+"join Sach s on a.MaS = s.MaS\n" +
+"join LoaiSach ls on ls.MaLS=s.MaLS \n" +
+"where a.MaDH = ?";
+        return this.selectBySql(sql, madh);
+    }
 }

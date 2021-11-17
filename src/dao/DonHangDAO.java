@@ -70,8 +70,32 @@ public class DonHangDAO extends DAO<DonHang, String> {
         }
         return list;
     }
-       public List<DonHang> selectByDHCT(){
-        String sql = "select distinct a.MaDH,b.MaS,b.Soluong,b.Sotien,a.Tongtien,a.Ngaymua,a.MaNV,b.Ghichu from DonHang a,DonHangChiTiet b where a.MaDH = b.MaDH";
-        return this.selectBySql(sql);
+       
+    
+     private List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
+        try {
+            List<Object[]> list = new ArrayList<>();
+            ResultSet rs = JDBCHelper.query(sql, agrs);
+            
+            while (rs.next()) {
+                Object[] vals = new Object[cols.length];
+                for(int i=0; i<cols.length;i++){
+                    vals[i]= rs.getObject(cols[i]);
+                }
+                list.add(vals);
+            } 
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
+
+    public List<Object[]> getThongTin(String tenS) {
+        String sql = "{CALL sp_DonHang(?)}";
+        String[] cols = {"ls.TenLS","s.TenS","s.Tacgia","a.MaS","a.Soluong","a.Sotien","a.Ghichu","d.*"};
+        return this.getListOfArray(sql, cols, tenS);
+    }
+    
 }
