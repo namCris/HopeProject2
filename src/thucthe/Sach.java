@@ -5,6 +5,7 @@
  */
 package thucthe;
 
+import java.awt.font.OpenType;
 import java.util.Date;
 
 /**
@@ -12,10 +13,21 @@ import java.util.Date;
  * @author Thanh Lam
  */
 public class Sach {
+
+    @Override
+    public boolean equals(Object obj) {
+        Sach target = (Sach) obj;
+        if (target == null) return false;
+        return target.getMaSach() == getMaSach();
+    }
     private int maSach, soTrang, soLuong;
     private String maLoaiSach, tenSach, tacGia, nhaXuatBan, maNhanVien, hinh, moTa;
     private Date ngayXuatBan;
     private double giaNhap, giaBan;
+
+    public Sach(int maSach) {
+        this.maSach = maSach;
+    }
 
     public Sach() {
     }
