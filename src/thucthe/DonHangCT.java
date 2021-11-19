@@ -10,35 +10,55 @@ package thucthe;
  * @author ACER
  */
 public class DonHangCT {
-    String maDHCT,ghiChu;
-    int maS,soLuong;
+    int maDHCT;
+    String maDH;
+    String maLs;
+    int maS;
+    String tenS;
+    int soLuong;
     double giaBan;
-
-    public DonHangCT(String maDHCT, String ghiChu, int maS, int soLuong, double giaBan) {
-        this.maDHCT = maDHCT;
-        this.ghiChu = ghiChu;
-        this.maS = maS;
-        this.soLuong = soLuong;
-        this.giaBan = giaBan;
+    String ghiChu;
+    
+    public double getTongTienCT() {
+        return this.soLuong*this.giaBan;
     }
 
     public DonHangCT() {
     }
 
-    public String getMaDHCT() {
+    public DonHangCT(int maDHCT, String maDH, String maLs, int maS, String tenS, int soLuong, double giaBan, String ghiChu) {
+        this.maDHCT = maDHCT;
+        this.maDH = maDH;
+        this.maLs = maLs;
+        this.maS = maS;
+        this.tenS = tenS;
+        this.soLuong = soLuong;
+        this.giaBan = giaBan;
+        this.ghiChu = ghiChu;
+    }
+
+    public int getMaDHCT() {
         return maDHCT;
     }
 
-    public void setMaDHCT(String maDHCT) {
+    public void setMaDHCT(int maDHCT) {
         this.maDHCT = maDHCT;
     }
 
-    public String getGhiChu() {
-        return ghiChu;
+    public String getMaDH() {
+        return maDH;
     }
 
-    public void setGhiChu(String ghiChu) {
-        this.ghiChu = ghiChu;
+    public void setMaDH(String maDH) {
+        this.maDH = maDH;
+    }
+
+    public String getMaLs() {
+        return maLs;
+    }
+
+    public void setMaLs(String maLs) {
+        this.maLs = maLs;
     }
 
     public int getMaS() {
@@ -47,6 +67,14 @@ public class DonHangCT {
 
     public void setMaS(int maS) {
         this.maS = maS;
+    }
+
+    public String getTenS() {
+        return tenS;
+    }
+
+    public void setTenS(String tenS) {
+        this.tenS = tenS;
     }
 
     public int getSoLuong() {
@@ -64,5 +92,14 @@ public class DonHangCT {
     public void setGiaBan(double giaBan) {
         this.giaBan = giaBan;
     }
-    
+
+    public String getGhiChu() {
+        return ghiChu;
+    }
+
+    public void setGhiChu(String ghiChu) {
+        this.ghiChu = ghiChu;
+    }
+
+   
 }

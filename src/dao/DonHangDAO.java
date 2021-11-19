@@ -17,19 +17,19 @@ import java.sql.ResultSet;
  */
 public class DonHangDAO extends DAO<DonHang, String> {
     
-    final String INSERT_SQL = "INSERT INTO DonHang (MaDH, Tongtien, Ngaymua, MaNV) VALUES (?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE DonHang SET Tongtien=? , Ngaymua=? , MaNV=?  WHERE MaDH=?";
+    final String INSERT_SQL = "INSERT INTO DonHang (MaDH, Ngaymua, MaNV, Trangthai) VALUES (?, ?, ?, ?)";
+    final String UPDATE_SQL = "UPDATE DonHang SET Ngaymua=?, MaNV=?, Trangthai=? WHERE MaDH=?";
     final String DELETE_SQL = "DELETE FROM DonHang WHERE MaDH=?";
     final String SELECT_ALL_SQL = "SELECT * FROM DonHang";
     final String SELECT_BY_ID_SQL = "SELECT * FROM DonHang WHERE MaDH = ?";
     @Override
     public void insert(DonHang entity) {
-       JDBCHelper.update(INSERT_SQL, entity.getMaDH(),entity.getTongTien(),entity.getNgayMua(),entity.getMaNV());
+       JDBCHelper.update(INSERT_SQL, entity.getMaDH(),entity.getNgayMua(),entity.getMaNV(),entity.getTrangThai());
     }
 
     @Override
     public void update(DonHang entity) {
-       JDBCHelper.update(UPDATE_SQL, entity.getTongTien(),entity.getNgayMua(),entity.getMaNV(), entity.getMaDH());
+       JDBCHelper.update(UPDATE_SQL, entity.getNgayMua(), entity.getMaNV(), entity.getTrangThai(), entity.getMaDH());
     }
 
     @Override
@@ -59,9 +59,9 @@ public class DonHangDAO extends DAO<DonHang, String> {
             while (rs.next()) {
                 DonHang entity = new DonHang();
                 entity.setMaDH(rs.getString("MaDH"));
-                entity.setTongTien(rs.getDouble("Tongtien"));
                 entity.setNgayMua(rs.getDate("Ngaymua"));
                 entity.setMaNV(rs.getString("MaNV"));
+                entity.setTrangThai(rs.getString("Trangthai"));
                 list.add(entity);
             }
         } catch (Exception e) {

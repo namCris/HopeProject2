@@ -12,18 +12,23 @@ import java.util.Date;
  * @author ACER
  */
 public class DonHang {
-    String maDH,maNV;
+    String maDH;
     Date ngayMua;
-    double tongTien;
+    String maNV;
+    String trangThai;
 
-    public DonHang(String maDH, String maNV, Date ngayMua, double tongTien) {
-        this.maDH = maDH;
-        this.maNV = maNV;
-        this.ngayMua = ngayMua;
-        this.tongTien = tongTien;
+    public double getTongTien() {
+        return 0;
     }
 
     public DonHang() {
+    }
+
+    public DonHang(String maDH, Date ngayMua, String maNV, String trangThai) {
+        this.maDH = maDH;
+        this.ngayMua = ngayMua;
+        this.maNV = maNV;
+        this.trangThai = trangThai;
     }
 
     public String getMaDH() {
@@ -34,14 +39,6 @@ public class DonHang {
         this.maDH = maDH;
     }
 
-    public String getMaNV() {
-        return maNV;
-    }
-
-    public void setMaNV(String maNV) {
-        this.maNV = maNV;
-    }
-
     public Date getNgayMua() {
         return ngayMua;
     }
@@ -50,12 +47,20 @@ public class DonHang {
         this.ngayMua = ngayMua;
     }
 
-    public double getTongTien() {
-        return tongTien;
+    public String getMaNV() {
+        return maNV;
     }
 
-    public void setTongTien(double tongTien) {
-        this.tongTien = tongTien;
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
     }
-    
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
 }

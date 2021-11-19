@@ -16,20 +16,20 @@ import java.sql.ResultSet;
  */
 public class DonHangCTDAO extends DAO<DonHangCT, String>{
 
-    final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDH, MaS, Soluong, Sotien, Ghichu) VALUES (?, ?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaS=? , Soluong=? , Sotien=?, Ghichu=? WHERE MaDH=?";
-    final String DELETE_SQL = "DELETE FROM DonHangChiTiet WHERE MaDH=?";
+    final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDHCT, MaDH, MaLS, MaS, Tens, Soluong, Giatien, Ghichu) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaDHCT=?, MaDH=?, MaLS=?, MaS=? , Soluong=? , Giatien=?, Ghichu=?  WHERE MaDHCT=?";
+    final String DELETE_SQL = "DELETE FROM DonHangChiTiet WHERE MaDHCT=?";
     final String SELECT_ALL_SQL = "SELECT * FROM DonHangChiTiet";
-    final String SELECT_BY_ID_SQL = "SELECT * FROM DonHangChiTiet WHERE MaDH = ?";
+    final String SELECT_BY_ID_SQL = "SELECT * FROM DonHangChiTiet WHERE MaDH= ?";
     
     @Override
     public void insert(DonHangCT entity) {
-        JDBCHelper.update(INSERT_SQL, entity.getMaDHCT(),entity.getMaS(),entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu());
+        JDBCHelper.update(INSERT_SQL, entity.getMaDHCT(),entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu());
     }
 
     @Override
     public void update(DonHangCT entity) {
-        JDBCHelper.update(UPDATE_SQL, entity.getMaS(),entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu(), entity.getMaDHCT());
+        JDBCHelper.update(UPDATE_SQL, entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu(), entity.getMaDHCT());
     }
 
     @Override
@@ -58,10 +58,13 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
             ResultSet rs = JDBCHelper.query(sql, args);
             while (rs.next()) {
                 DonHangCT entity = new DonHangCT();
-                //entity.setMaDHCT(rs.getString("MaDH"));
+                entity.setMaDHCT(rs.getInt("MaDHCT"));
+                entity.setMaDH(rs.getString("MaDH"));
+                entity.setMaLs(rs.getString("MaLS"));
                 entity.setMaS(rs.getInt("MaS"));
+                entity.setTenS(rs.getString("Tens"));
                 entity.setSoLuong(rs.getInt("Soluong"));
-                entity.setGiaBan(rs.getDouble("Sotien"));
+                entity.setGiaBan(rs.getDouble("Giatien"));
                 entity.setGhiChu(rs.getString("Ghichu"));
                 list.add(entity);
             }
