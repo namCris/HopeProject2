@@ -5,6 +5,12 @@
  */
 package form;
 
+import dao.DonHangDAO;
+import dao.ThongKeDAO;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.table.DefaultTableModel;
+import phuongtien.Auth;
 import phuongtien.XImage;
 
 /**
@@ -12,7 +18,8 @@ import phuongtien.XImage;
  * @author Thanh Lam
  */
 public class ThongKeJDialog extends javax.swing.JDialog {
-
+    ThongKeDAO tkdao = new ThongKeDAO();
+    DonHangDAO dhDAO = new DonHangDAO();
     /**
      * Creates new form TopSachJDialog
      */
@@ -97,7 +104,7 @@ public class ThongKeJDialog extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
-        tabThongKe.addTab("Top sách bán chạy", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/leaderboard_48px.png")), jPanel2); // NOI18N
+        tabThongKe.addTab("Top 5 cuốn sách HOT", new javax.swing.ImageIcon(getClass().getResource("/hinhanh/leaderboard_48px.png")), jPanel2); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -105,6 +112,11 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         jPanel7.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 2), "Năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(0, 153, 153))); // NOI18N
 
         cbxNam.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        cbxNam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxNamActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -127,17 +139,17 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         tblDoanhThu.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         tblDoanhThu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "LOẠI SÁCH", "TÊN SÁCH", "SỐ LƯỢNG", "TIỀN LÃI", "NĂM"
+                "LOẠI SÁCH", "TIỀN LÃI"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, true, false
+                false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -203,6 +215,10 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cbxNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxNamActionPerformed
+        fillTableDoanhThu();
+    }//GEN-LAST:event_cbxNamActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -263,8 +279,44 @@ public class ThongKeJDialog extends javax.swing.JDialog {
         setSize(700,635);
         setLocationRelativeTo(null);
         this.setIconImage(XImage.getLogo());
+        fillTableTop();
+        fillComboBoxNam();
+        fillTableDoanhThu();
+        this.selectTab(0);
+        if(!Auth.isManager()){
+           tabThongKe.remove(1); //nếu không phải trưởng phòng xóa tab Doanh thu
+       }
     }
     void selectTab(int index){
         tabThongKe.setSelectedIndex(index);
+    }
+    
+    
+    void fillTableTop(){
+        DefaultTableModel model = (DefaultTableModel) tblTopSach.getModel();
+        model.setRowCount(0);
+        List<Object[]> list = tkdao.getTop();
+        for(Object[] row: list){
+            model.addRow(row);
+        }
+    }
+    
+     void fillComboBoxNam(){
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cbxNam.getModel();
+        model.removeAllElements();
+        List<Integer> list = dhDAO.selectYears();
+        for(Integer year: list){
+            model.addElement(year);
+        }
+    }
+    
+    void fillTableDoanhThu(){
+        DefaultTableModel model = (DefaultTableModel) tblDoanhThu.getModel();
+        model.setRowCount(0);
+        int nam = (Integer) cbxNam.getSelectedItem();
+        List<Object[]> list = tkdao.getDoanhThu(nam);
+        for(Object[] row: list){
+            model.addRow(row);
+        }
     }
 }

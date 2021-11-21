@@ -62,6 +62,7 @@ public class DonHangDAO extends DAO<DonHang, String> {
                 entity.setNgayMua(rs.getDate("Ngaymua"));
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setTrangThai(rs.getString("Trangthai"));
+                entity.setTongTien(rs.getDouble("TongTien"));
                 list.add(entity);
             }
         } catch (Exception e) {
@@ -71,31 +72,36 @@ public class DonHangDAO extends DAO<DonHang, String> {
         return list;
     }
        
-    
-     private List<Object[]> getListOfArray(String sql, String[] cols, Object... agrs) {
-        try {
-            List<Object[]> list = new ArrayList<>();
-            ResultSet rs = JDBCHelper.query(sql, agrs);
-            
-            while (rs.next()) {
-                Object[] vals = new Object[cols.length];
-                for(int i=0; i<cols.length;i++){
-                    vals[i]= rs.getObject(cols[i]);
-                }
-                list.add(vals);
-            } 
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+     public List<DonHang> selectByKeyword(String keyword){
+        String sql = "Select * from DonHang where MaDH like ?";
+        return this.selectBySql(sql, "%"+keyword+"%");
     }
-
-    public List<Object[]> getThongTin(String tenS) {
-        String sql = "{CALL sp_DonHang(?)}";
-        String[] cols = {"ls.TenLS","s.TenS","s.Tacgia","a.MaS","a.Soluong","a.Sotien","a.Ghichu","d.*"};
-        return this.getListOfArray(sql, cols, tenS);
+     
+      public List<Integer> selectYears(){
+         //truy vấn ds năm các khóa học được tạo ra
+         String sql = "select distinct year(Ngaymua) from DonHang order by year(Ngaymua) desc";
+         List<Integer> list = new ArrayList<>();
+         try {
+             ResultSet rs = JDBCHelper.query(sql);
+             while(rs.next()){
+                 list.add(rs.getInt(1));
+             }
+             rs.getStatement().getConnection().close();
+             return list;
+         } catch (Exception e) {
+             e.printStackTrace();
+             throw new RuntimeException(e);
+         }
+     }
+      
+       public List<DonHang> selectByTong(String maDH){
+        String sql = "select d.MaDH, SUM(ct.Giatien*ct.Soluong) as TongTien, d.Ngaymua, d.MaNV, d.Trangthai \n" +
+                        "from DonHang d\n" +
+                        "join DonHangChiTiet ct on ct.MaDH = d.MaDH\n" +
+                        "where d.MaDH = ?\n" +
+                        "Group by d.MaDH,d.Ngaymua,d.MaNV,d.Trangthai";
+        return this.selectBySql(sql, maDH);
     }
+      
     
 }

@@ -18,11 +18,12 @@ public class DonHangCT {
     int soLuong;
     double giaBan;
     String ghiChu;
-    
+  
     public double getTongTienCT() {
         return this.soLuong*this.giaBan;
-    }
-
+    } 
+ 
+   
     public DonHangCT() {
     }
 
@@ -35,6 +36,7 @@ public class DonHangCT {
         this.soLuong = soLuong;
         this.giaBan = giaBan;
         this.ghiChu = ghiChu;
+    
     }
 
     public int getMaDHCT() {

@@ -530,8 +530,19 @@ public class TrangChuJFrame extends javax.swing.JFrame {
     }
 
     private void openThongKe(int index) {
-        ThongKeJDialog tk = new ThongKeJDialog(this, true);
-        tk.selectTab(index);
-        tk.setVisible(true);  
+         if(Auth.isLogin()){
+            if(index == 1 && !Auth.isManager()){
+                //xac dinh xem phải trưởng phòng không
+                MsgBox.alert(this, "Bạn không có quyền xem Doanh thu!");
+            }else{
+                ThongKeJDialog tk = new ThongKeJDialog(this, true);
+                tk.selectTab(index);
+                tk.setVisible(true);  
+                
+            }
+        }else{
+            MsgBox.alert(this, "Vui lòng đăng nhập!");
+        }
+       
     }
 }

@@ -16,11 +16,20 @@ public class DonHang {
     Date ngayMua;
     String maNV;
     String trangThai;
-
+    double tong;
+        @Override
+ public String toString() {
+    return this.toString();
+ }
+    
     public double getTongTien() {
-        return 0;
+        return tong;   
     }
 
+    public void setTongTien(double  tong) {
+        this.tong = tong;
+    }
+    
     public DonHang() {
     }
 

@@ -16,15 +16,15 @@ import java.sql.ResultSet;
  */
 public class DonHangCTDAO extends DAO<DonHangCT, String>{
 
-    final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDHCT, MaDH, MaLS, MaS, Tens, Soluong, Giatien, Ghichu) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaDHCT=?, MaDH=?, MaLS=?, MaS=? , Soluong=? , Giatien=?, Ghichu=?  WHERE MaDHCT=?";
+    final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDH, MaLS, MaS, Tens, Soluong, Giatien, Ghichu) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaDH=?, MaLS=?, MaS=? , Soluong=? , Giatien=?, Ghichu=?  WHERE MaDHCT=?";
     final String DELETE_SQL = "DELETE FROM DonHangChiTiet WHERE MaDHCT=?";
     final String SELECT_ALL_SQL = "SELECT * FROM DonHangChiTiet";
     final String SELECT_BY_ID_SQL = "SELECT * FROM DonHangChiTiet WHERE MaDH= ?";
     
     @Override
     public void insert(DonHangCT entity) {
-        JDBCHelper.update(INSERT_SQL, entity.getMaDHCT(),entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu());
+        JDBCHelper.update(INSERT_SQL,entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu());
     }
 
     @Override
@@ -66,6 +66,7 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
                 entity.setSoLuong(rs.getInt("Soluong"));
                 entity.setGiaBan(rs.getDouble("Giatien"));
                 entity.setGhiChu(rs.getString("Ghichu"));
+       
                 list.add(entity);
             }
         } catch (Exception e) {
@@ -75,12 +76,15 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
         return list;
     }
     
-    public List<DonHangCT> selectByMaS(String madh){
-        String sql = "select ls.TenLS,s.TenS,s.Tacgia,a.MaS,a.Soluong,a.Sotien,a.Ghichu,d.*\n" +
-"from DonHang d join DonHangChiTiet a on d.MaDH = a.MaDH\n" +
-"join Sach s on a.MaS = s.MaS\n" +
-"join LoaiSach ls on ls.MaLS=s.MaLS \n" +
-"where a.MaDH = ?";
-        return this.selectBySql(sql, madh);
+    public List<DonHangCT> selectByKeywordCT(String keyword){
+        String sql = "Select * from DonHangChiTiet where MaDH like ?";
+        return this.selectBySql(sql, "%"+keyword+"%");
     }
+    
+    public List<DonHangCT> selectByTongTien(String keyword){
+        String sql = "select sum(Soluong * Giatien) from DonHangChiTiet where MaDH=? group by MaDH";
+        return this.selectBySql(sql, keyword);
+    }
+    
 }
+

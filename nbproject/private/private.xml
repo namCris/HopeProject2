@@ -3,8 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/dao/ThongKeDAO.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/form/ThongKeJDialog.java</file>
             <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/form/DonHangJDialog.java</file>
-            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/form/SachJDiaLog.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/thucthe/DonHang.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/dao/DonHangDAO.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/thucthe/DonHangCT.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/test.java</file>
+            <file>file:/C:/Users/ACER/Downloads/Du_AN_1/HopeProject2/src/phuongtien/JDBCHelper.java</file>
         </group>
     </open-files>
 </project-private>
