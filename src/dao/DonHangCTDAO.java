@@ -24,7 +24,7 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
     
     @Override
     public void insert(DonHangCT entity) {
-        JDBCHelper.update(INSERT_SQL,entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(),entity.getGiaBan(),entity.getGhiChu());
+        JDBCHelper.update(INSERT_SQL, entity.getMaDH(), entity.getMaLs(), entity.getMaS(), entity.getTenS(), entity.getSoLuong(), entity.getGiaBan(), entity.getGhiChu());
     }
 
     @Override
@@ -76,15 +76,11 @@ public class DonHangCTDAO extends DAO<DonHangCT, String>{
         return list;
     }
     
-    public List<DonHangCT> selectByKeywordCT(String keyword){
+    public List<DonHangCT> selectByKeywordCT(String maDH){
         String sql = "Select * from DonHangChiTiet where MaDH like ?";
-        return this.selectBySql(sql, "%"+keyword+"%");
+        return this.selectBySql(sql, "%"+maDH+"%");
     }
     
-    public List<DonHangCT> selectByTongTien(String keyword){
-        String sql = "select sum(Soluong * Giatien) from DonHangChiTiet where MaDH=? group by MaDH";
-        return this.selectBySql(sql, keyword);
-    }
     
 }
 

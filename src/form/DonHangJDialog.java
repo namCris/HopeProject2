@@ -110,7 +110,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
         jPanel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jPanel4.setBackground(new java.awt.Color(0, 153, 153));
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "Mã loại sách", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2), "LOẠI SÁCH", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         cbxLoaiSach.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cbxLoaiSach.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
@@ -246,11 +246,11 @@ public class DonHangJDialog extends javax.swing.JDialog {
             .addComponent(jSeparator1)
             .addComponent(jSeparator2)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(262, 262, 262)
-                .addComponent(btnThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(163, 163, 163))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -360,9 +360,9 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
         txtTimkiem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         txtTimkiem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
-        txtTimkiem.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                txtTimkiemFocusLost(evt);
+        txtTimkiem.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtTimkiemKeyPressed(evt);
             }
         });
 
@@ -431,10 +431,11 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 786, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                            .addComponent(btnTimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(85, 85, 85)
+                            .addGap(54, 54, 54)
+                            .addComponent(btnTimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(txtTimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(53, 53, 53))
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -578,10 +579,10 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnTimkiemActionPerformed
 
-    private void txtTimkiemFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimkiemFocusLost
+    private void txtTimkiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimkiemKeyPressed
          this.fillTableDonHang();
         this.fillTableDonHangCT();
-    }//GEN-LAST:event_txtTimkiemFocusLost
+    }//GEN-LAST:event_txtTimkiemKeyPressed
 
     /**
      * @param args the command line arguments
@@ -777,17 +778,6 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
     }
 
-    void updateTrangThai() {
-        for (int i = 0; i < tblDonHang.getRowCount(); i++) {
-            String maDh = (String) tblDonHang.getValueAt(i, 0);
-            DonHang dh = dhDAO.selectById(maDh);
-            dh.setTrangThai((String) tblDonHang.getValueAt(i, 3));
-            dhDAO.update(dh);
-         
-        }
-        MsgBox.alertSuccessful(this, "Cập nhật thành công!");
-    }
-
     void fillTableDonHangCT() {
         //Đổ dữ liệu vào bảng
         DefaultTableModel model = (DefaultTableModel) tblDonHangCT.getModel();
@@ -853,7 +843,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
     }
 
-    private void updateDH() {
+    void updateDH() {
 
             DonHang dh = getForm();
             try {
@@ -865,13 +855,27 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
        
     }
+    
+    void updateTrangThai() {
+           for (int i = 0; i < tblDonHang.getRowCount(); i++) {
+               String maDh = (String) tblDonHang.getValueAt(i, 0);
+               DonHang dh = dhDAO.selectById(maDh);
+               dh.setTrangThai((String) tblDonHang.getValueAt(i, 3));
+               dhDAO.update(dh);
 
+           }
+           MsgBox.alertSuccessful(this, "Cập nhật thành công!");
+       }
+    
     void insertDonHangCT() {
  
             DonHangCT dhct = getFormCT();
             try {
                 dhct.setMaDHCT(maDhct);
                 dhctDAO.insert(dhct);
+                sDAO.update(dhct.getSoLuong(), dhct.getMaS());
+                System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
+                this.fillTableSach();
                 this.fillTableDonHangCT(); // đổ dữ liệu vào bảng
                 this.clearForm();// sau khi thêm xong thì ta xóa trắng form
 
@@ -882,6 +886,8 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
       
     }
+    
+    
 
    /* void setFormDH(DonHang model) {
         txtMaDH.setText(model.getMaDH());
@@ -967,4 +973,5 @@ public class DonHangJDialog extends javax.swing.JDialog {
         }
         return true;
     }
+    
 }

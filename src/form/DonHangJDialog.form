@@ -110,11 +110,11 @@
                       <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
                       <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
-                          <Component id="btnThanhToan" min="-2" pref="129" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnLamMoi" min="-2" pref="129" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="btnThanhToan" min="-2" pref="135" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="btnLamMoi" min="-2" pref="135" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -241,7 +241,7 @@
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                        <TitledBorder justification="2" title="M&#xe3; lo&#x1ea1;i s&#xe1;ch">
+                        <TitledBorder justification="2" title="LO&#x1ea0;I S&#xc1;CH">
                           <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                             <LineBorder thickness="2">
                               <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
@@ -576,10 +576,11 @@
                           <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jSeparator3" alignment="0" min="-2" pref="786" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnTimkiem" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                      <Component id="btnTimkiem" min="-2" pref="152" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="txtTimkiem" min="-2" pref="442" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                   </Group>
@@ -652,7 +653,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimkiemFocusLost"/>
+                    <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimkiemKeyPressed"/>
                   </Events>
                 </Component>
                 <Container class="javax.swing.JScrollPane" name="jScrollPane1">

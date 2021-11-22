@@ -22,7 +22,7 @@ public class SachDAO extends DAO<Sach, Integer> {
     final String DELETE_SQL = "DELETE FROM Sach WHERE MaS = ?";
     final String SELECT_ALL_SQL = "SELECT * FROM Sach";
     final String SELECT_BY_ID_SQL = "SELECT * FROM  Sach WHERE MaS = ?";
-
+    final String UPDATE_SOLUONG_BY_ID_SQL = "update sach set soluong = soluong - ?  WHERE MaS = ?";
     @Override
     public void insert(Sach entity) {
         JDBCHelper.update(INSERT_SQL, entity.getMaLoaiSach(), entity.getTenSach(), entity.getTacGia(), entity.getNhaXuatBan(), entity.getNgayXuatBan(), entity.getSoTrang(), entity.getSoLuong(), entity.getGiaNhap(), entity.getGiaBan(), entity.getMaNhanVien(), entity.getHinh(), entity.getMoTa());
@@ -31,6 +31,9 @@ public class SachDAO extends DAO<Sach, Integer> {
     @Override
     public void update(Sach entity) {
         JDBCHelper.update(UPDATE_SQL, entity.getMaLoaiSach(), entity.getTenSach(), entity.getNhaXuatBan(), entity.getNgayXuatBan(), entity.getSoTrang(), entity.getSoLuong(), entity.getGiaNhap(), entity.getGiaBan(), entity.getMaNhanVien(), entity.getHinh(), entity.getMoTa(), entity.getMaSach());
+    }
+    public void update(int soluongMua, int masach) {
+        JDBCHelper.update(UPDATE_SOLUONG_BY_ID_SQL, soluongMua, masach);
     }
 
     @Override
@@ -91,4 +94,9 @@ public class SachDAO extends DAO<Sach, Integer> {
         return this.selectBySql(sql, maLS);
     }
     
+    /* public List<Sach> selectByUpdate(int maS) {
+        String sql = "update Sach set Soluong = 100 - (select SUm(Soluong) from DonHangChiTiet where DonHangChiTiet.MaS=Sach.MaS)\n" +
+"where Sach.MaS = ?";
+        return this.selectBySql(sql, maS);
+    }*/
 }

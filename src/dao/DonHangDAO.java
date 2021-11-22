@@ -95,12 +95,12 @@ public class DonHangDAO extends DAO<DonHang, String> {
      }
       
        public List<DonHang> selectByTong(String maDH){
-        String sql = "select d.MaDH, SUM(ct.Giatien*ct.Soluong) as TongTien, d.Ngaymua, d.MaNV, d.Trangthai \n" +
-                        "from DonHang d\n" +
-                        "join DonHangChiTiet ct on ct.MaDH = d.MaDH\n" +
-                        "where d.MaDH = ?\n" +
-                        "Group by d.MaDH,d.Ngaymua,d.MaNV,d.Trangthai";
-        return this.selectBySql(sql, maDH);
+        String sql = "select d.MaDH, SUM(ct.Giatien*ct.Soluong) as TongTien, d.Ngaymua, d.MaNV, d.Trangthai " +
+                        "from DonHang d " +
+                        "join DonHangChiTiet ct on ct.MaDH = d.MaDH " +
+                        "where d.MaDH like ? " +
+                        "Group by d.MaDH,d.Ngaymua,d.MaNV,d.Trangthai ";
+        return this.selectBySql(sql, "%"+maDH+"%");
     }
       
     
