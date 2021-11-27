@@ -395,6 +395,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
         });
 
         txtTimkiem.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        txtTimkiem.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtTimkiem.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 153), 3));
         txtTimkiem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
