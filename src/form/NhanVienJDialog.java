@@ -588,7 +588,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         if (!Auth.isManager()) {
             MsgBox.alert(this, "Bạn không có quyền xóa nhân viên !");
         } else {
-            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này ?"));
+            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa nhân viên này ?")){
             String manv = txtMaNhanVien.getText();
             try {
                 nvdao.delete(manv);
@@ -597,6 +597,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                 MsgBox.alertSuccessful(this, "Nhân viên đã bị xóa !");
             } catch (Exception e) {
                 MsgBox.alert(this, "Xóa nhân viên thất bại !");
+            }
             }
         }
     }

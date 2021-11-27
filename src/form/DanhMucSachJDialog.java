@@ -448,7 +448,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
         if (!Auth.isManager()) {
             MsgBox.alert(this, "Bạn không có quyền xóa danh mục sách !");
         } else {
-            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa loại sách này ?"));
+            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa loại sách này ?")){
             String maLoaiSach = txtMaLoai.getText();
             try {
                 dmsdao.delete(maLoaiSach);
@@ -457,6 +457,7 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
                 MsgBox.alertSuccessful(this, "Loại sách này đã bị xóa !");
             } catch (Exception e) {
                 MsgBox.alert(this, "Xóa danh mục sách thất bại !");
+            }
             }
         }
     }

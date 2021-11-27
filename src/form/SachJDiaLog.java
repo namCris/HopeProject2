@@ -853,7 +853,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
         if (!Auth.isManager()) {
             MsgBox.alert(this, "Bạn không có quyền xóa sách !");
         } else {
-            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa quyển sách này ?"));
+            if (MsgBox.confirm(this, "Bạn thực sự muốn xóa quyển sách này ?")){
             int makh = (int) tblSach.getValueAt(row, 0);
             try {
                 sachdao.delete(makh);
@@ -862,6 +862,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
                 MsgBox.alertSuccessful(this, "Sách đã bị xóa !");
             } catch (Exception e) {
                 MsgBox.alert(this, "Xóa sách thất bại !");
+            }
             }
         }
     }
