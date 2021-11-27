@@ -544,11 +544,12 @@ public class DonHangJDialog extends javax.swing.JDialog {
             if (dhDAO.selectById(txtMaDH.getText()) != null) {
                 updateDH();
                 insertDonHangCT();
+                MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
 
             } else {
                 insertDonHang();
                 insertDonHangCT();
-                this.clearForm();
+                this.clearForm();   
             }
         }else{
             MsgBox.alert(this, "Vui lòng điền đủ thông tin và chính xác");
