@@ -107,13 +107,28 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
         mniDangXuLy.setText("Đang xử lý");
         mniDangXuLy.setToolTipText("");
+        mniDangXuLy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniDangXuLyActionPerformed(evt);
+            }
+        });
         mnuTrangThai.add(mniDangXuLy);
 
         mniHuyDon.setText("Hủy đơn");
+        mniHuyDon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniHuyDonActionPerformed(evt);
+            }
+        });
         mnuTrangThai.add(mniHuyDon);
 
         mniChotDon.setText("Chốt đơn");
         mniChotDon.setToolTipText("");
+        mniChotDon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mniChotDonActionPerformed(evt);
+            }
+        });
         mnuTrangThai.add(mniChotDon);
 
         popup_TrangThai.add(mnuTrangThai);
@@ -551,7 +566,6 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private void btnCapNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCapNhatActionPerformed
         try {
             String trThai = tblDonHang.getValueAt(row, 3).toString();
-
             updateTrangThai();
 
         } catch (NumberFormatException e) {
@@ -607,6 +621,29 @@ public class DonHangJDialog extends javax.swing.JDialog {
          this.fillTableDonHang();
         this.fillTableDonHangCT();
     }//GEN-LAST:event_txtTimkiemKeyPressed
+
+    private void mniDangXuLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDangXuLyActionPerformed
+        int row = tblDonHang.getSelectedRow();
+        
+        if (row >=0)
+            tblDonHang.setValueAt("Đang xử lý", row, 3);
+    }//GEN-LAST:event_mniDangXuLyActionPerformed
+
+    private void mniHuyDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHuyDonActionPerformed
+           int row = tblDonHang.getSelectedRow();
+        
+        if (row >=0)
+            tblDonHang.setValueAt("Hủy đơn", row, 3);
+    
+    }//GEN-LAST:event_mniHuyDonActionPerformed
+
+    private void mniChotDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniChotDonActionPerformed
+           int row = tblDonHang.getSelectedRow();
+        
+        if (row >=0)
+            tblDonHang.setValueAt("Chốt đơn", row, 3);
+    
+    }//GEN-LAST:event_mniChotDonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -903,7 +940,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
                 dhct.setMaDHCT(maDhct);
                 dhctDAO.insert(dhct);
                 sDAO.update(dhct.getSoLuong(), dhct.getMaS());
-                System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
+               // System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
                 this.fillTableSach();
                 this.fillTableDonHangCT(); // đổ dữ liệu vào bảng
                 this.clearForm();// sau khi thêm xong thì ta xóa trắng form

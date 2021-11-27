@@ -19,17 +19,26 @@
                 <Property name="text" type="java.lang.String" value="&#x110;ang x&#x1eed; l&#xfd;"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniDangXuLyActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mniHuyDon">
               <Properties>
                 <Property name="text" type="java.lang.String" value="H&#x1ee7;y &#x111;&#x1a1;n"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniHuyDonActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mniChotDon">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ch&#x1ed1;t &#x111;&#x1a1;n"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mniChotDonActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
