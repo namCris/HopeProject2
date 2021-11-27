@@ -541,16 +541,14 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         if(validateForm()==true){   
-            DonHang dh = new DonHang();
             if (dhDAO.selectById(txtMaDH.getText()) != null) {
                 updateDH();
                 insertDonHangCT();
-               
-                
 
             } else {
                 insertDonHang();
                 insertDonHangCT();
+                this.clearForm();
             }
         }else{
             MsgBox.alert(this, "Vui lòng điền đủ thông tin và chính xác");
@@ -853,6 +851,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             String dhct = txtTimkiem.getText();
             List<DonHangCT> list = dhctDAO.selectByKeywordCT(dhct);
             for (DonHangCT ct : list) {
+               
                 model.addRow(new Object[]{
                     ct.getMaDH(),
                     ct.getMaDHCT(),
@@ -901,7 +900,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             try {
                 dhDAO.insert(dh);
                 this.fillTableDonHang();// đổ dữ liệu vào bảng
-                this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+                //this.clearForm();// sau khi thêm xong thì ta xóa trắng form
                 MsgBox.alertSuccessful(this, "Đơn hàng thanh toán thành công!");
             } catch (Exception e) {
                 MsgBox.alert(this, "Đơn hàng thanh toán thất bại!");
@@ -938,16 +937,17 @@ public class DonHangJDialog extends javax.swing.JDialog {
             DonHangCT dhct = getFormCT();
             try {
                 dhct.setMaDHCT(maDhct);
+                System.out.println(""+dhct.getMaS());
                 dhctDAO.insert(dhct);
                 sDAO.update(dhct.getSoLuong(), dhct.getMaS());
                // System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
                 this.fillTableSach();
                 this.fillTableDonHangCT(); // đổ dữ liệu vào bảng
-                this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+                //this.clearForm();// sau khi thêm xong thì ta xóa trắng form
 
-                MsgBox.alertSuccessful(this, "Đơn hàng chi tiết thanh toán thành công!");
+                //MsgBox.alertSuccessful(this, "Đơn hàng chi tiết thanh toán thành công!");
             } catch (Exception e) {
-                MsgBox.alert(this, "Đơn hàng chi tiết thanh toán thất bại!");
+                //MsgBox.alert(this, "Đơn hàng chi tiết thanh toán thất bại!");
                 e.printStackTrace();
             }
       

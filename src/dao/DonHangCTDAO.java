@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 public class DonHangCTDAO extends DAO<DonHangCT, String>{
 
     final String INSERT_SQL = "INSERT INTO DonHangChiTiet (MaDH, MaLS, MaS, Tens, Soluong, Giatien, Ghichu) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaDH=?, MaLS=?, MaS=? , Soluong=? , Giatien=?, Ghichu=?  WHERE MaDHCT=?";
+    final String UPDATE_SQL = "UPDATE DonHangChiTiet SET MaDH=?, MaLS=?, MaS=? ,Tens=?, Soluong=? , Giatien=?, Ghichu=?  WHERE MaDHCT=?";
     final String DELETE_SQL = "DELETE FROM DonHangChiTiet WHERE MaDHCT=?";
     final String SELECT_ALL_SQL = "SELECT * FROM DonHangChiTiet";
     final String SELECT_BY_ID_SQL = "SELECT * FROM DonHangChiTiet WHERE MaDH= ?";
