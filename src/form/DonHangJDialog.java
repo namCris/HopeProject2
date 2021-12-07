@@ -543,10 +543,10 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         if(validateForm()==true){   
             if (dhDAO.selectById(txtMaDH.getText()) != null) {
-                updateDH();
-                insertDonHangCT();
-                MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
-
+                     updateDH();
+                     insertDonHangCT();
+                     MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
+      
             } else {
                 insertDonHang();
                 insertDonHangCT();
@@ -910,17 +910,18 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
     }
 
-    void updateDH() {
+     void updateDH() {
 
             DonHang dh = getForm();
-            try {
-                dhDAO.update(dh);
-                this.fillTableDonHang();
-                //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
-            } catch (Exception e) {
-              //  MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
-            }
-       
+         
+                     try {
+                            dhDAO.update(dh);
+                            this.fillTableDonHang();
+                            //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
+                        } catch (Exception e) {
+                          //  MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
+                        }
+     
     }
     
     void updateTrangThai() {
