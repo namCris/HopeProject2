@@ -440,7 +440,15 @@ public class DonHangJDialog extends javax.swing.JDialog {
             new String [] {
                 "MÃ ĐH", "TỔNG TIỀN", "NGÀY MUA", "TRẠNG THÁI", "MÃ NV"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         tblDonHang.setComponentPopupMenu(popup_TrangThai);
         tblDonHang.setRowHeight(30);
         tblDonHang.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -543,10 +551,9 @@ public class DonHangJDialog extends javax.swing.JDialog {
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
         if(validateForm()==true){   
             if (dhDAO.selectById(txtMaDH.getText()) != null) {
-                     updateDH();
-                     insertDonHangCT();
-                     MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
-      
+                    updateDH();
+                    insertDonHangCT();
+                    MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
             } else {
                 insertDonHang();
                 insertDonHangCT();
@@ -898,7 +905,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
     void insertDonHang() {
 
             DonHang dh = getForm();
-
+            if(txtMaDH.getText().equals(dh.getMaDH())){
             try {
                 dhDAO.insert(dh);
                 this.fillTableDonHang();// đổ dữ liệu vào bảng
@@ -907,21 +914,19 @@ public class DonHangJDialog extends javax.swing.JDialog {
             } catch (Exception e) {
                 MsgBox.alert(this, "Đơn hàng thanh toán thất bại!");
                 e.printStackTrace();
-            }
+            }}
     }
 
      void updateDH() {
 
             DonHang dh = getForm();
-         
-                     try {
-                            dhDAO.update(dh);
-                            this.fillTableDonHang();
-                            //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
-                        } catch (Exception e) {
-                          //  MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
+                try {
+                        dhDAO.update(dh);
+                         this.fillTableDonHang();
+                         //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
+                    } catch (Exception e) {
+                         //MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
                         }
-     
     }
     
     void updateTrangThai() {
