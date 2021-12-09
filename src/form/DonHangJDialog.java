@@ -442,7 +442,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, true, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
