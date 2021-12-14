@@ -660,7 +660,7 @@ public class SachJDiaLog extends javax.swing.JDialog {
                     s.getNgayXuatBan(),
                     s.getSoLuong(),
                     s.getSoTrang(),
-                    s.getGiaNhap(),
+                    s.getGiaNhap()+" VND",
                     s.getGiaBan(),
                     s.getHinh(),
                     s.getMaNhanVien()
