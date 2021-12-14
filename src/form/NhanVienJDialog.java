@@ -6,11 +6,13 @@
 package form;
 
 import dao.NhanVienDAO;
+import java.awt.Color;
 import java.io.File;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import phuongtien.Auth;
@@ -526,30 +528,49 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         String matKhau = new String(txtMatKhau.getPassword());
         if (maNV.equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập mã nhân viên !");
+            txtMaNhanVien.setBackground(Color.red);
             return false;
+        }else{
+            txtMaNhanVien.setBackground(Color.WHITE);
         }
         NhanVien nv = nvdao.selectById(maNV);//kiểm tra xem mã nhân viên có trùng không
         if (nv == null) {
             if (matKhau.equals("")) {
                 MsgBox.alert(this, "Bạn chưa nhập mật khẩu !");
+                txtMatKhau.setBackground(Color.red);
                 return false;
+            }else{
+                txtMatKhau.setBackground(Color.white);
             }
             if (txtHoTen.getText().equals("")) {
                 MsgBox.alert(this, "Bạn chưa nhập họ và tên !");
+                txtHoTen.setBackground(Color.red);
                 return false;
+            }else{
+                txtHoTen.setBackground(Color.white);
             }
+            
             if (txtSoDienThoai.getText().equals("")) {
                 MsgBox.alert(this, "Bạn chưa nhập số điện thoại !");
+                txtSoDienThoai.setBackground(Color.red);
                 return false;
+            }else{
+                txtSoDienThoai.setBackground(Color.white);
             }
             Pattern pattern = Pattern.compile("0\\d{9}");
             Matcher matcher = pattern.matcher(txtSoDienThoai.getText());
             if (!matcher.find()) {
                 MsgBox.alert(this, "Số điện thoại không hợp lệ !");
+                txtSoDienThoai.setBackground(Color.red);
                 return false;
+            }else{
+                txtSoDienThoai.setBackground(Color.white);
             }
+            
         } else {
             MsgBox.alert(this, "Mã nhân viên đã tồn tại !");
+            txtMaNhanVien.setBackground(Color.red);
+            txtSoDienThoai.setBackground(Color.white);
             return false;
         }
         return true;

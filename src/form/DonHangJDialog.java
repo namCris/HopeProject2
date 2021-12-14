@@ -9,6 +9,7 @@ import dao.DanhMucSachDAO;
 import dao.DonHangCTDAO;
 import dao.DonHangDAO;
 import dao.SachDAO;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -549,20 +550,20 @@ public class DonHangJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLamMoiActionPerformed
 
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
-        if(validateForm()==true){   
+        if (validateForm() == true) {
             if (dhDAO.selectById(txtMaDH.getText()) != null) {
-                    updateDH();
-                    insertDonHangCT();
-                    MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
+                updateDH();
+                insertDonHangCT();
+                MsgBox.alertSuccessful(this, "Thanh toán đơn hàng thành công");
             } else {
                 insertDonHang();
                 insertDonHangCT();
-                this.clearForm();   
+                this.clearForm();
             }
-        }else{
+        } else {
             MsgBox.alert(this, "Vui lòng điền đủ thông tin và chính xác");
         }
-        
+
     }//GEN-LAST:event_btnThanhToanActionPerformed
 
     private void cbxLoaiSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxLoaiSachActionPerformed
@@ -604,16 +605,16 @@ public class DonHangJDialog extends javax.swing.JDialog {
             if (soLuong < 0) {
                 return;
             }
-             if (gia <= 0) {
-                return ;
+            if (gia <= 0) {
+                return;
             }
-              double tong = soLuong * gia;
-              txtTongTien.setText(tong + "");
+            double tong = soLuong * gia;
+            txtTongTien.setText(tong + "");
         } catch (Exception e) {
-            
-            return ;
+
+            return;
         }
-          
+
     }//GEN-LAST:event_txtSoLuongFocusLost
 
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
@@ -625,31 +626,33 @@ public class DonHangJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnTimkiemActionPerformed
 
     private void txtTimkiemKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimkiemKeyPressed
-         this.fillTableDonHang();
+        this.fillTableDonHang();
         this.fillTableDonHangCT();
     }//GEN-LAST:event_txtTimkiemKeyPressed
 
     private void mniDangXuLyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniDangXuLyActionPerformed
         int row = tblDonHang.getSelectedRow();
-        
-        if (row >=0)
+
+        if (row >= 0)
             tblDonHang.setValueAt("Đang xử lý", row, 3);
     }//GEN-LAST:event_mniDangXuLyActionPerformed
 
     private void mniHuyDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniHuyDonActionPerformed
-           int row = tblDonHang.getSelectedRow();
-        
-        if (row >=0)
+        int row = tblDonHang.getSelectedRow();
+
+        if (row >= 0) {
             tblDonHang.setValueAt("Hủy đơn", row, 3);
-    
+        }
+
     }//GEN-LAST:event_mniHuyDonActionPerformed
 
     private void mniChotDonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mniChotDonActionPerformed
-           int row = tblDonHang.getSelectedRow();
-        
-        if (row >=0)
+        int row = tblDonHang.getSelectedRow();
+
+        if (row >= 0) {
             tblDonHang.setValueAt("Chốt đơn", row, 3);
-    
+        }
+
     }//GEN-LAST:event_mniChotDonActionPerformed
 
     /**
@@ -833,7 +836,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
         try {
             String maDH = txtTimkiem.getText();
-           
+
             List<DonHang> list = dhDAO.selectByTong(maDH);
             for (DonHang dh : list) {
                 model.addRow(new Object[]{
@@ -860,7 +863,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             String dhct = txtTimkiem.getText();
             List<DonHangCT> list = dhctDAO.selectByKeywordCT(dhct);
             for (DonHangCT ct : list) {
-               
+
                 model.addRow(new Object[]{
                     ct.getMaDH(),
                     ct.getMaDHCT(),
@@ -904,8 +907,8 @@ public class DonHangJDialog extends javax.swing.JDialog {
 
     void insertDonHang() {
 
-            DonHang dh = getForm();
-            if(txtMaDH.getText().equals(dh.getMaDH())){
+        DonHang dh = getForm();
+        if (txtMaDH.getText().equals(dh.getMaDH())) {
             try {
                 dhDAO.insert(dh);
                 this.fillTableDonHang();// đổ dữ liệu vào bảng
@@ -914,56 +917,55 @@ public class DonHangJDialog extends javax.swing.JDialog {
             } catch (Exception e) {
                 MsgBox.alert(this, "Đơn hàng thanh toán thất bại!");
                 e.printStackTrace();
-            }}
-    }
-
-     void updateDH() {
-
-            DonHang dh = getForm();
-                try {
-                        dhDAO.update(dh);
-                         this.fillTableDonHang();
-                         //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
-                    } catch (Exception e) {
-                         //MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
-                        }
-    }
-    
-    void updateTrangThai() {
-           for (int i = 0; i < tblDonHang.getRowCount(); i++) {
-               String maDh = (String) tblDonHang.getValueAt(i, 0);
-               DonHang dh = dhDAO.selectById(maDh);
-               dh.setTrangThai((String) tblDonHang.getValueAt(i, 3));
-               dhDAO.update(dh);
-
-           }
-           MsgBox.alertSuccessful(this, "Cập nhật thành công!");
-       }
-    
-    void insertDonHangCT() {
- 
-            DonHangCT dhct = getFormCT();
-            try {
-                dhct.setMaDHCT(maDhct);
-                System.out.println(""+dhct.getMaS());
-                dhctDAO.insert(dhct);
-                sDAO.update(dhct.getSoLuong(), dhct.getMaS());
-               // System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
-                this.fillTableSach();
-                this.fillTableDonHangCT(); // đổ dữ liệu vào bảng
-                //this.clearForm();// sau khi thêm xong thì ta xóa trắng form
-
-                //MsgBox.alertSuccessful(this, "Đơn hàng chi tiết thanh toán thành công!");
-            } catch (Exception e) {
-                //MsgBox.alert(this, "Đơn hàng chi tiết thanh toán thất bại!");
-                e.printStackTrace();
             }
-      
+        }
     }
-    
-    
 
-   /* void setFormDH(DonHang model) {
+    void updateDH() {
+
+        DonHang dh = getForm();
+        try {
+            dhDAO.update(dh);
+            this.fillTableDonHang();
+            //MsgBox.alertSuccessful(this, "Cập nhật Đơn hàng thành công !");
+        } catch (Exception e) {
+            //MsgBox.alert(this, "Cập nhật Đơn hàng thất bại !");
+        }
+    }
+
+    void updateTrangThai() {
+        for (int i = 0; i < tblDonHang.getRowCount(); i++) {
+            String maDh = (String) tblDonHang.getValueAt(i, 0);
+            DonHang dh = dhDAO.selectById(maDh);
+            dh.setTrangThai((String) tblDonHang.getValueAt(i, 3));
+            dhDAO.update(dh);
+
+        }
+        MsgBox.alertSuccessful(this, "Cập nhật thành công!");
+    }
+
+    void insertDonHangCT() {
+
+        DonHangCT dhct = getFormCT();
+        try {
+            dhct.setMaDHCT(maDhct);
+            System.out.println("" + dhct.getMaS());
+            dhctDAO.insert(dhct);
+            sDAO.update(dhct.getSoLuong(), dhct.getMaS());
+            // System.out.println("soluong " + dhct.getSoLuong()+ " " + dhct.getMaS());
+            this.fillTableSach();
+            this.fillTableDonHangCT(); // đổ dữ liệu vào bảng
+            //this.clearForm();// sau khi thêm xong thì ta xóa trắng form
+
+            //MsgBox.alertSuccessful(this, "Đơn hàng chi tiết thanh toán thành công!");
+        } catch (Exception e) {
+            //MsgBox.alert(this, "Đơn hàng chi tiết thanh toán thất bại!");
+            e.printStackTrace();
+        }
+
+    }
+
+    /* void setFormDH(DonHang model) {
         txtMaDH.setText(model.getMaDH());
         Date d = model.getNgayMua();
         if (d != null) {
@@ -972,9 +974,8 @@ public class DonHangJDialog extends javax.swing.JDialog {
             txtNgayMua.setText("");
         }
     }*/
-
     void setFormDHCT(DonHangCT model) {
-       
+
         txtMaLS.setText(model.getMaLs());
         txtMaS.setText(String.valueOf(model.getMaS()));
         txtTenS.setText(model.getTenS());
@@ -984,68 +985,91 @@ public class DonHangJDialog extends javax.swing.JDialog {
     }
 
     boolean validateForm() {
-         if (txtMaDH.getText().equals("")) {
+        if (txtMaDH.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập Mã đơn hàng!");
+            txtMaDH.setBackground(Color.red);
             return false;
+        } else {
+            txtMaDH.setBackground(Color.white);
         }
-         
-         if (txtNgayMua.getText().equals("")) {
+
+        if (txtNgayMua.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập ngày tháng năm!");
+            txtNgayMua.setBackground(Color.red);
             return false;
+        } else {
+            txtNgayMua.setBackground(Color.white);
         }
-          
+
         if (txtMaLS.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập Mã loại sách!");
+            txtMaLS.setBackground(Color.red);
             return false;
+        } else {
+            txtMaLS.setBackground(Color.white);
         }
+        
         if (txtMaS.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập Mã sách !");
+            txtMaS.setBackground(Color.red);
             return false;
+        } else {
+            txtMaS.setBackground(Color.white);
         }
-        
+
         if (txtTenS.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập tên sách !");
-            return false;
-        }
-      
+            txtTenS.setBackground(Color.red);
+            return false;  
+        }else{
+            txtTenS.setBackground(Color.white);}
+
         if (txtSoLuong.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập số lượng mua !");
-            return false;
-        }
+            txtSoLuong.setBackground(Color.red);
+            return false;  
+        }else{
+            txtSoLuong.setBackground(Color.white);}
+        
         if (txtGiaTien.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập giá tiền!");
-            return false;
-        }
-      
-        
-          
+            txtGiaTien.setBackground(Color.red);
+            return false;  
+        }else{
+            txtGiaTien.setBackground(Color.white);}
+
         Pattern pattern = Pattern.compile("^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$");
         Matcher matcher = pattern.matcher(txtNgayMua.getText());
         if (!matcher.find()) {
             MsgBox.alert(this, "Ngày tháng năm không hợp lệ !");
+            txtNgayMua.setBackground(Color.red);
             return false;
         }
         try {
             double soLuong = Double.parseDouble(txtSoLuong.getText());
             if (soLuong < 0) {
                 MsgBox.alert(this, "Số lượng không được âm !");
+                txtSoLuong.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Số lượng phải là số !");
+            txtSoLuong.setBackground(Color.red);
             return false;
         }
         try {
             double gia = Double.parseDouble(txtGiaTien.getText());
             if (gia <= 0) {
                 MsgBox.alert(this, "Giá tiền phải lớn hơn 0 !");
+                txtGiaTien.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Giá tiền phải là số !");
+            txtGiaTien.setBackground(Color.red);
             return false;
         }
         return true;
     }
-    
+
 }

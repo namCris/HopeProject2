@@ -7,6 +7,7 @@ package form;
 
 import dao.DanhMucSachDAO;
 import dao.SachDAO;
+import java.awt.Color;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -735,83 +736,122 @@ public class SachJDiaLog extends javax.swing.JDialog {
     private boolean validateForm() {
         if (txtTenSach.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập tên sách !");
-            return false;
-        }
+            txtTenSach.setBackground(Color.red);
+            return false;  
+        }else{
+            txtTenSach.setBackground(Color.white);
+                }
+        
         if (txtTacGia.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập tên tác giả !");
-            return false;
-        }
+            txtTacGia.setBackground(Color.red);
+            return false;  
+        }else{
+            txtTacGia.setBackground(Color.white);
+                }
+        
         if (txtNhaXuatBan.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập nhà xuất bản !");
-            return false;
-        }
+            txtNhaXuatBan.setBackground(Color.red);
+            return false;  
+        }else{
+            txtNhaXuatBan.setBackground(Color.white);
+                }
+        
         if (txtNgayXuatBan.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập ngày xuất bản !");
-            return false;
-        }
+            txtNgayXuatBan.setBackground(Color.red);
+            return false;  
+        }else{
+            txtNgayXuatBan.setBackground(Color.white);
+                }
+        
         if (txtSoLuong.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập số lượng sách !");
             return false;
         }
         if (txtSoTrang.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập số trang !");
-            return false;
-        }
+           txtSoTrang.setBackground(Color.red);
+            return false;  
+        }else{
+            txtSoTrang.setBackground(Color.white);
+                }
+        
         if (txtGiaTienNhap.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập giá tiền nhập !");
-            return false;
-        }
+            txtGiaTienNhap.setBackground(Color.red);
+            return false;  
+        }else{
+            txtGiaTienNhap.setBackground(Color.white);
+                }
+        
         if (txtGiaTienBan.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa nhập giá tiền bán !");
-            return false;
-        }
+            txtGiaTienBan.setBackground(Color.red);
+            return false;  
+        }else{
+            txtGiaTienBan.setBackground(Color.white);
+                }
+        
         Pattern pattern = Pattern.compile("^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$");
         Matcher matcher = pattern.matcher(txtNgayXuatBan.getText());
         if (!matcher.find()) {
             MsgBox.alert(this, "Ngày tháng năm không hợp lệ !");
+            txtNgayXuatBan.setBackground(Color.red);
             return false;
         }
         try {
             double soLuong = Double.parseDouble(txtSoLuong.getText());
             if (soLuong < 0) {
                 MsgBox.alert(this, "Số lượng không được âm !");
+                txtSoLuong.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Số lượng phải là số !");
+            txtSoLuong.setBackground(Color.red);
             return false;
         }
         try {
             double soTrang = Double.parseDouble(txtSoTrang.getText());
             if (soTrang <= 0) {
                 MsgBox.alert(this, "Số trang phải lớn hơn 0 !");
+                txtSoTrang.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Số trang phải là số !");
+            txtSoTrang.setBackground(Color.red);
             return false;
         }
         try {
             double giaTienNhap = Double.parseDouble(txtGiaTienNhap.getText());
             if (giaTienNhap < 0) {
                 MsgBox.alert(this, "Giá tiền không được âm !");
+                txtGiaTienNhap.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Giá tiền phải là số !");
+            txtGiaTienNhap.setBackground(Color.red);
             return false;
         }
         try {
             double giaTienBan = Double.parseDouble(txtGiaTienBan.getText());
             if (giaTienBan < 0) {
                 MsgBox.alert(this, "Giá tiền không được âm !");
+                txtGiaTienBan.setBackground(Color.red);
                 return false;
             }
         } catch (Exception e) {
             MsgBox.alert(this, "Giá tiền phải là số !");
+            txtGiaTienBan.setBackground(Color.red);
             return false;
         }
+        
         return true;
+        
     }
 
     private Sach getForm() {

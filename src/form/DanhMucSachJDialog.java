@@ -6,7 +6,9 @@
 package form;
 
 import dao.DanhMucSachDAO;
+import java.awt.Color;
 import java.util.List;
+import javax.swing.JDialog;
 import javax.swing.table.DefaultTableModel;
 import phuongtien.Auth;
 import phuongtien.MsgBox;
@@ -416,16 +418,24 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
     private boolean validateForm() {
         if (txtMaLoai.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa điền mã loại sách !");
+            txtMaLoai.setBackground(Color.red);
             return false;
+        }else{
+            txtMaLoai.setBackground(Color.white);
         }
         DanhMucSach maLoaiSach = dmsdao.selectById(txtMaLoai.getText());
         if (maLoaiSach == null) {
             if (txtTenLoai.getText().equals("")) {
                 MsgBox.alert(this, "Bạn chưa điền tên loại sách !");
+                txtTenLoai.setBackground(Color.red);
                 return false;
+            }else{
+                txtTenLoai.setBackground(Color.white);
             }
         } else {
             MsgBox.alert(this, "Mã loại sách này đã tồn tại !");
+            txtMaLoai.setBackground(Color.red);
+            return false;
         }
         return true;
     }
@@ -466,8 +476,12 @@ public class DanhMucSachJDialog extends javax.swing.JDialog {
         boolean ok = true;
         if (txtTenLoai.getText().equals("")) {
             MsgBox.alert(this, "Bạn chưa điền tên loại sách !");
+            txtTenLoai.setBackground(Color.red);
             ok = false;
+        }else{
+            txtTenLoai.setBackground(Color.white);
         }
+        
         if (ok == true) {
             DanhMucSach model = getForm();
             try {
