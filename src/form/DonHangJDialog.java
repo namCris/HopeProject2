@@ -790,7 +790,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
                         s.getTenSach(),
                         s.getTacGia(),
                         s.getSoLuong(),
-                        s.getGiaBan()
+                        String.format("%.0f", s.getGiaBan())+" đ"
                     });
                 }
             }
@@ -841,7 +841,7 @@ public class DonHangJDialog extends javax.swing.JDialog {
             for (DonHang dh : list) {
                 model.addRow(new Object[]{
                     dh.getMaDH(),
-                    String.format("%.0f", dh.getTongTien()),
+                    String.format("%.0f", dh.getTongTien())+" đ",
                     dh.getNgayMua(),
                     dh.getTrangThai(),
                     dh.getMaNV()
@@ -871,8 +871,8 @@ public class DonHangJDialog extends javax.swing.JDialog {
                     ct.getMaS(),
                     ct.getTenS(),
                     ct.getSoLuong(),
-                    ct.getGiaBan(),
-                    String.format("%.0f", ct.getTongTienCT()),
+                    String.format("%.0f", ct.getGiaBan())+" đ",
+                    String.format("%.0f", ct.getTongTienCT())+ " đ",
                     ct.getGhiChu()
 
                 });
